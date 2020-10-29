@@ -1,22 +1,18 @@
 <template>
   <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <img alt="Autopunch logo" src="./assets/logo.png">
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue';
-
 export default {
   name: 'App',
   components: {
-    HelloWorld,
   },
 };
 </script>
 
 <style lang="scss">
-@import 'variables.scss';
-@import 'global.scss';
+  @import 'variables.scss';
+  @import 'global.scss';
 </style>
