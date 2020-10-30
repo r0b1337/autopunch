@@ -1,13 +1,16 @@
 <template>
   <div id="app">
-    <img alt="Autopunch logo" src="./assets/logo.png">
+    <Intro></Intro>
   </div>
 </template>
 
 <script>
+import Intro from './components/Intro.vue';
+
 export default {
   name: 'App',
   components: {
+    Intro,
   },
 };
 </script>
