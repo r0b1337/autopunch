@@ -1,7 +1,7 @@
 export default {
     bind: (el, binding) => {
         el.style.backgroundImage = `url(${require(`@/${binding.value}`)})`;
-        el.style.backgroundSize = `${window.innerWidth * 1.75}px`;
+        el.style.backgroundSize = '110%';
         el.style.backgroundPosition = 'center 0';
 
         const position = e => {
