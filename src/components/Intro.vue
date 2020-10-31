@@ -1,13 +1,15 @@
 <template>
     <div class="intro" v-parallax="'assets/blurred-background.jpg'">
-        <img class="logo" alt="Autopunch logo" :src="require('../assets/logo.png')">
-        <span class="title">
-            - Votre auto a besoin d'<span style="color: var(--color-red)">p</span>unch ?
-        </span>
-        <span class="subtitle">- Assez perdu de temps en vous déplaçant au garage ?</span>
-        <span class="subtitle">- N'en dîtes pas plus !</span>
-        <span class="subtitle">Nous intervenons où vous le souhaitez.</span>
-        <Button class="button" text="DEMANDEZ UN RENDEZ-VOUS"></Button>
+        <div class="container">
+            <img class="logo" alt="Autopunch logo" :src="require('../assets/logo.png')">
+            <span class="title">
+                - Votre auto a besoin d'<span style="color: var(--color-red)">p</span>unch ?
+            </span>
+            <span class="subtitle">- Assez perdu de temps en vous déplaçant au garage ?</span>
+            <span class="subtitle">- N'en dîtes pas plus !</span>
+            <span class="subtitle">Nous intervenons où vous le souhaitez.</span>
+            <Button class="button" text="DEMANDEZ UN RENDEZ-VOUS"></Button>
+        </div>
     </div>
 </template>
 
@@ -34,22 +36,39 @@ export default {
         padding: var(--space-large);
         padding-top: 120px;
 
-        .logo {
-            margin-bottom: var(--space-x-large);
+        &:before {
+            background: rgba(10,10,10,.4);
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
             width: 100%;
+            height: 100%;
+            z-index: 0;
         }
 
-        .title {
-            text-transform: uppercase;
-            margin-bottom: var(--space-x-large);
-        }
+        .container {
+            z-index: 1;
+            position: relative;
 
-        .subtitle {
-            margin-bottom: var(--space-large);
-        }
+            .logo {
+                margin-bottom: var(--space-x-large);
+                width: 100%;
+                max-width: 1000px;
+            }
 
-        .button {
-            margin-bottom: var(--space-large);
+            .title {
+                text-transform: uppercase;
+                margin-bottom: var(--space-x-large);
+            }
+
+            .subtitle {
+                margin-bottom: var(--space-large);
+            }
+
+            .button {
+                margin-bottom: var(--space-large);
+            }
         }
     }
 </style>
