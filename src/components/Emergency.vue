@@ -2,7 +2,9 @@
     <div class="emergency">
         <punch-parallax image="ferrari-wheel.jpg"></punch-parallax>
         <span class="title">UNE URGENCE ?</span>
-        <span class="subtitle">Contactez nous pour toutes demandes nécessitant une intervention immédiate</span>
+        <span class="subtitle">
+            Contactez nous pour toutes demandes nécessitant une intervention immédiate
+        </span>
         <Button class="button" text="06 61 36 05 10"></Button>
     </div>
 </template>
