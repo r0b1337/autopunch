@@ -1,8 +1,6 @@
 <template>
     <div class="intro">
-        <parallax sectionClass="parallax" direction="down" speedFactor=0.5>
-            <img :src="require('../assets/blurred-background.jpg')" alt="">
-        </parallax>
+        <punch-parallax image="blurred-background.jpg"></punch-parallax>
         <img class="logo" alt="Autopunch logo" :src="require('../assets/logo.png')">
         <span class="title">
             - Votre auto a besoin d'<span style="color: var(--color-red)">p</span>unch ?
@@ -15,13 +13,13 @@
 </template>
 
 <script>
-import Parallax from 'vue-parallaxy';
+import Parallax from './Parallax.vue';
 import Button from './Button.vue';
 
 export default {
   name: 'Intro',
   components: {
-    Parallax,
+    'punch-parallax': Parallax,
     Button,
   },
 };
@@ -30,18 +28,10 @@ export default {
 <style scoped lang="scss">
     .intro {
         height: auto;
+        overflow: hidden;
+        position: relative;
         padding: var(--space-large);
         padding-top: 120px;
-        position: relative;
-
-        .parallax {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 72% !important;
-            z-index: -1;
-        }
 
         .logo {
             margin-bottom: var(--space-x-large);
