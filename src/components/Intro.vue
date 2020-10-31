@@ -39,17 +39,11 @@ export default {
         }
 
         .title {
-            display: block;
-            font: var(--font-title);
-            color: var(--color-light);
             text-transform: uppercase;
             margin-bottom: var(--space-x-large);
         }
 
         .subtitle {
-            display: block;
-            font: var(--font-subtitle);
-            color: var(--color-light);
             margin-bottom: var(--space-large);
         }
 
