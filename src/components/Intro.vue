@@ -30,6 +30,7 @@ export default {
 <style scoped lang="scss">
     .intro {
         height: auto;
+        padding: var(--space-large);
         padding-top: 120px;
         position: relative;
 
@@ -44,6 +45,7 @@ export default {
 
         .logo {
             margin-bottom: var(--space-x-large);
+            width: 100%;
         }
 
         .title {
