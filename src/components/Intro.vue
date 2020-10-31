@@ -12,18 +12,17 @@
 </template>
 
 <script>
-
 import Parallax from '@/directives/Parallax.js';
 import Button from '@/components/Button.vue';
 
 export default {
-  name: 'Intro',
-  components: {
-    Button,
-  },
-  directives: {
-    Parallax,
-  },
+    name: 'Intro',
+    components: {
+        Button,
+    },
+    directives: {
+        Parallax,
+    },
 };
 </script>
 
@@ -53,5 +52,4 @@ export default {
             margin-bottom: var(--space-large);
         }
     }
-
 </style>

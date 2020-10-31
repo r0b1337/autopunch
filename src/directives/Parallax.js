@@ -4,10 +4,10 @@ export default {
         el.style.backgroundSize = `${window.innerWidth * 1.75}px`;
         el.style.backgroundPosition = 'center 0';
 
-        const position = (e) => {
+        const position = e => {
             e.preventDefault();
             el.style.backgroundPosition = `center ${window.pageYOffset * 0.75}px`;
-        }
+        };
         window.addEventListener('scroll', position);
-    }
-}
+    },
+};
