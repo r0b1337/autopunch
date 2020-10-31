@@ -1,6 +1,5 @@
 <template>
-    <div class="intro">
-        <punch-parallax image="blurred-background.jpg"></punch-parallax>
+    <div class="intro" v-parallax="'assets/blurred-background.jpg'">
         <img class="logo" alt="Autopunch logo" :src="require('../assets/logo.png')">
         <span class="title">
             - Votre auto a besoin d'<span style="color: var(--color-red)">p</span>unch ?
@@ -13,15 +12,17 @@
 </template>
 
 <script>
-import Parallax from './Parallax.vue';
-import Button from './Button.vue';
+import Parallax from '@/directives/Parallax.js';
+import Button from '@/components/Button.vue';
 
 export default {
-  name: 'Intro',
-  components: {
-    'punch-parallax': Parallax,
-    Button,
-  },
+    name: 'Intro',
+    components: {
+        Button,
+    },
+    directives: {
+        Parallax,
+    },
 };
 </script>
 
@@ -51,5 +52,4 @@ export default {
             margin-bottom: var(--space-large);
         }
     }
-
 </style>

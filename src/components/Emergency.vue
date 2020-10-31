@@ -1,6 +1,5 @@
 <template>
-    <div class="emergency">
-        <punch-parallax image="ferrari-wheel.jpg"></punch-parallax>
+    <div class="emergency" v-parallax="'assets/ferrari-wheel.jpg'">
         <span class="title">UNE URGENCE ?</span>
         <span class="subtitle">
             Contactez nous pour toutes demandes nécessitant une intervention immédiate
@@ -10,15 +9,17 @@
 </template>
 
 <script>
-import Parallax from './Parallax.vue';
-import Button from './Button.vue';
+import Parallax from '@/directives/Parallax';
+import Button from '@/components/Button.vue';
 
 export default {
-  name: 'Emergency',
-  components: {
-    'punch-parallax': Parallax,
-    Button,
-  },
+    name: 'Emergency',
+    components: {
+        Button,
+    },
+    directives: {
+        Parallax,
+    },
 };
 </script>
 
@@ -37,5 +38,4 @@ export default {
             margin-bottom: var(--space-large);
         }
     }
-
 </style>
