@@ -57,6 +57,10 @@ export default {
                 max-width: 1000px;
             }
 
+            .title, .subtitle {
+                color: var(--color-light);
+            }
+
             .title {
                 text-transform: uppercase;
                 margin-bottom: var(--space-x-large);

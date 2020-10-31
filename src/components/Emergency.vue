@@ -32,6 +32,7 @@ export default {
 
         .title, .subtitle {
             margin-bottom: var(--space-large);
+            color: var(--color-light);
         }
 
         .button {
