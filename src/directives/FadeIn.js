@@ -5,7 +5,7 @@ export default {
         const observe = elem => new Promise(resolve => {
             const observer = new IntersectionObserver(elements => {
                 if(elements[0].isIntersecting) return resolve();
-            }, { threshold: [1] });
+            }, { threshold: [0] });
 
             observer.observe(elem);
         });
