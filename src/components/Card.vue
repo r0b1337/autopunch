@@ -18,7 +18,7 @@ export default {
 <style scoped lang="scss">
     .card {
         border: 1px solid rgba(0,0,0,.2);
-        border-radius: 3px;
+        border-radius: var(--border-radius-base);
         background-color: var(--color-light);
         padding: var(--padding-card);
 
@@ -28,6 +28,9 @@ export default {
         }
 
         .content {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
             font: var(--font-base);
             color: #555555;
         }
