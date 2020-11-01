@@ -3,7 +3,7 @@
         <div class="container">
             <img class="logo" alt="Autopunch logo" :src="require('../assets/logo.png')">
             <span class="title">
-                - Votre auto a besoin d'<span style="color: var(--color-red)">p</span>unch ?
+                - Votre auto a besoin d'<span style="color: var(--color-danger)">p</span>unch ?
             </span>
             <span class="subtitle">- Assez perdu de temps en vous déplaçant au garage ?</span>
             <span class="subtitle">- N'en dîtes pas plus !</span>
