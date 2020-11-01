@@ -3,6 +3,7 @@
     <Intro></Intro>
     <Emergency></Emergency>
     <Benefits></Benefits>
+    <Performances></Performances>>
   </div>
 </template>
 
@@ -10,6 +11,7 @@
 import Intro from '@/components/Intro.vue';
 import Emergency from '@/components/Emergency.vue';
 import Benefits from '@/components/Benefits.vue';
+import Performances from '@/components/Performances';
 
 export default {
     name: 'App',
@@ -17,11 +19,12 @@ export default {
         Intro,
         Emergency,
         Benefits,
+        Performances,
     },
 };
 </script>
 
 <style lang="scss">
-  @import 'variables.scss';
-  @import 'global.scss';
+    @import 'variables.scss';
+    @import 'global.scss';
 </style>
