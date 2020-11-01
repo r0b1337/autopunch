@@ -1,23 +1,44 @@
 body {
-  margin: 0;
+    margin: 0;
 }
 
 #app {
-  font-family: Roboto;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  width: 100vw;
-  height: 100vh;
+    font-family: Roboto;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-align: center;
+    color: #2c3e50;
+    width: 100vw;
+    height: 100vh;
 }
 
 .title {
-  display: block;
-  font: var(--font-title);
+    display: block;
+    font: var(--font-title);
 }
 
 .subtitle {
-  display: block;
-  font: var(--font-subtitle);
+    display: block;
+    font: var(--font-subtitle);
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+        transform: translateY(var(--space-large));
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.fade-in {
+    animation: fadeIn ease 1s;
+    -webkit-animation: fadeIn ease 1s;
+    -moz-animation: fadeIn ease 1s;
+    -o-animation: fadeIn ease 1s;
+    -ms-animation: fadeIn ease 1s;
+    opacity: 1 !important;
 }

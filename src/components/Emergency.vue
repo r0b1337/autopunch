@@ -1,5 +1,5 @@
 <template>
-    <div class="emergency" v-parallax="'assets/ferrari-wheel.jpg'">
+    <div class="emergency" v-parallax="'assets/ferrari-wheel.jpg'" v-fade-in>
         <span class="title">UNE URGENCE ?</span>
         <span class="subtitle">
             Contactez nous pour toutes demandes nécessitant une intervention immédiate
@@ -10,6 +10,7 @@
 
 <script>
 import Parallax from '@/directives/Parallax';
+import FadeIn from '@/directives/FadeIn';
 import Button from '@/components/Button.vue';
 
 export default {
@@ -19,6 +20,7 @@ export default {
     },
     directives: {
         Parallax,
+        FadeIn,
     },
 };
 </script>
