@@ -12,10 +12,6 @@
 <script>
 export default {
     name: 'Card',
-    props: {
-        title: String,
-        content: String,
-    },
 };
 </script>
 
