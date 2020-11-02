@@ -1,26 +1,26 @@
 @font-face {
   font-family: Roboto;
-  src: url(https://fonts.gstatic.com/s/robotocondensed/v19/ieVi2ZhZI2eCN5jzbjEETS9weq8-33mZGCoYag.ttf);
+  src: url('/fonts/Roboto.ttf');
 }
 
 @font-face {
   font-family: Roboto Bold;
-  src: url(https://fonts.gstatic.com/s/robotocondensed/v19/ieVi2ZhZI2eCN5jzbjEETS9weq8-32meGCoYag.ttf);
+  src: url('/fonts/Roboto_Bold.ttf');
 }
 
 @font-face {
   font-family: Bebas Neu Bold;
-  src: url(https://static-assets.strikinglycdn.com/fonts/bebasneue_bold-webfont.db0480ce584a47cfcc74435698c96cc5.woff2);
+  src: local('Bebas Neu Bold'), url("./assets/fonts/Bebas_Neu_Bold.woff2");
 }
 
 @font-face {
   font-family: Bitter;
-  src: url(https://fonts.gstatic.com/s/bitter/v16/rax8HiqOu8IVPmn7f4xpLjpSmw.woff2);
+  src: url('/fonts/Bitter.woff2');
 }
 
 @font-face {
   font-family: Roboto Condensed;
-  src: url(https://fonts.gstatic.com/s/robotocondensed/v19/ieVi2ZhZI2eCN5jzbjEETS9weq8-32meGCQYb9lecyU.woff2);
+  src: url('/fonts/Roboto_Condensed.woff2');
 }
 
 :root {
