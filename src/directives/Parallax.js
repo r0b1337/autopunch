@@ -1,13 +1,16 @@
 export default {
     bind: (el, binding) => {
-        el.style.backgroundImage = `url(${require(`@/${binding.value}`)})`;
-        el.style.backgroundSize = '110%';
-        el.style.backgroundPosition = 'center 0';
+        const $ = window.$;
 
-        const position = e => {
-            e.preventDefault();
-            el.style.backgroundPosition = `center ${window.pageYOffset * 0.75}px`;
-        };
+        el = $(el);
+        el.css({
+            'background-image': `url(${require(`@/${binding.value}`)})`,
+            'background-size': 'auto',
+            'background-position': 'center 0',
+            'background-attachment': 'fixed',
+        });
+
+        const position = () => el.css('background-position', `center ${window.pageYOffset * -0.2}px`);
         window.addEventListener('scroll', position);
     },
 };

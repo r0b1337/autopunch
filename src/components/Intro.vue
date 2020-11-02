@@ -14,7 +14,8 @@
 </template>
 
 <script>
-import Parallax from '@/directives/Parallax.js';
+import Parallax from '@/directives/Parallax';
+import FadeIn from '@/directives/FadeIn.js';
 import Button from '@/components/Button.vue';
 
 export default {
@@ -24,6 +25,7 @@ export default {
     },
     directives: {
         Parallax,
+        FadeIn
     },
 };
 </script>

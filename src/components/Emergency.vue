@@ -10,6 +10,7 @@
 
 <script>
 import Parallax from '@/directives/Parallax';
+import FadeIn from '@/directives/FadeIn';
 import Button from '@/components/Button.vue';
 
 export default {
@@ -19,6 +20,7 @@ export default {
     },
     directives: {
         Parallax,
+        FadeIn,
     },
 };
 </script>
