@@ -23,7 +23,7 @@
                 </template>
             </Card>
 
-            <div class="image"><img :src="require('@/assets/oil.jpg')" alt=""></div>
+            <div class="image"><img :src="require('@/assets/images/oil.jpg')" alt=""></div>
         </div>
 
         <div class="performance">
@@ -43,7 +43,7 @@
                 </template>
             </Card>
 
-            <div class="image"><img :src="require('@/assets/emptying.jpg')" alt=""></div>
+            <div class="image"><img :src="require('@/assets/images/emptying.jpg')" alt=""></div>
         </div>
 
         <div class="performance">
@@ -61,7 +61,7 @@
                 </template>
             </Card>
 
-            <div class="image"><img :src="require('@/assets/brake-pads.jpg')" alt=""></div>
+            <div class="image"><img :src="require('@/assets/images/brake-pads.jpg')" alt=""></div>
         </div>
 
         <div class="performance">
@@ -79,7 +79,7 @@
                 </template>
             </Card>
 
-            <div class="image"><img :src="require('@/assets/brake-discs.jpg')" alt=""></div>
+            <div class="image"><img :src="require('@/assets/images/brake-discs.jpg')" alt=""></div>
         </div>
 
         <div class="performance">
@@ -98,7 +98,7 @@
                 </template>
             </Card>
 
-            <div class="image"><img :src="require('@/assets/engine.jpg')" alt=""></div>
+            <div class="image"><img :src="require('@/assets/images/engine.jpg')" alt=""></div>
         </div>
 
         <div class="performance">
@@ -115,7 +115,7 @@
                 </template>
             </Card>
 
-            <div class="image"><img :src="require('@/assets/car-interior.jpg')" alt=""></div>
+            <div class="image"><img :src="require('@/assets/images/car-interior.jpg')" alt=""></div>
         </div>
 
         <div class="performance">
@@ -133,7 +133,7 @@
                 </template>
             </Card>
 
-            <div class="image"><img :src="require('@/assets/battery.jpg')" alt=""></div>
+            <div class="image"><img :src="require('@/assets/images/battery.jpg')" alt=""></div>
         </div>
 
         <div class="performance">
@@ -153,7 +153,7 @@
                 </template>
             </Card>
 
-            <div class="image"><img :src="require('@/assets/car-exterior.jpg')" alt=""></div>
+            <div class="image"><img :src="require('@/assets/images/car-exterior.jpg')" alt=""></div>
         </div>
 
         <Card>
