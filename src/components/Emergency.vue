@@ -1,5 +1,5 @@
 <template>
-    <div class="emergency" v-parallax="'assets/images/ferrari-wheel.jpg'">
+    <div class="emergency" v-parallax="'assets/images/ferrari-wheel.jpg'" v-fade-in>
         <span class="title">UNE URGENCE ?</span>
         <span class="subtitle">
             Contactez nous pour toutes demandes nécessitant une intervention immédiate

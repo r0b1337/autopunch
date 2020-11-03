@@ -1,6 +1,6 @@
 <template>
     <div class="intro" v-parallax="'assets/images/blurred-background.jpg'">
-        <div class="container">
+        <div class="container" v-fade-in>
             <img class="logo" alt="Autopunch logo" :src="require('../assets/images/logo.png')">
             <span class="title">
                 - Votre auto a besoin d'<span style="color: var(--color-danger)">p</span>unch ?
