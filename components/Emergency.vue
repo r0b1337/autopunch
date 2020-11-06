@@ -9,9 +9,9 @@
 </template>
 
 <script>
-import Parallax from '@/directives/Parallax';
-import FadeIn from '@/directives/FadeIn';
-import Button from '@/components/Button.vue';
+import Button from '~/components/Button';
+import FadeIn from '~/plugins/fade-in.client.js';
+import Parallax from '~/plugins/parallax.client.js';
 
 export default {
     name: 'Emergency',

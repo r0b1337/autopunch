@@ -175,8 +175,8 @@
 </template>
 
 <script>
-import Card from '@/components/Card';
-import FadeIn from '@/directives/FadeIn';
+import Card from '~/components/Card';
+import FadeIn from '~/plugins/fade-in.client.js';
 
 export default {
     name: 'Performances',
@@ -185,7 +185,7 @@ export default {
     },
     directives: {
         FadeIn,
-    }
+    },
 };
 </script>
 

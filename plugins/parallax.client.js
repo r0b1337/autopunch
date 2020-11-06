@@ -1,10 +1,12 @@
-export default {
+import Vue from 'vue';
+
+const directive = {
     bind: (el, binding) => {
         const $ = window.$;
 
         el = $(el);
         el.css({
-            'background-image': `url(${require(`@/${binding.value}`)})`,
+            'background-image': `url(${require(`~/${binding.value}`)})`,
             'background-size': 'auto',
             'background-position': 'center 0',
             'background-attachment': 'fixed',
@@ -14,3 +16,7 @@ export default {
         window.addEventListener('scroll', position);
     },
 };
+
+Vue.directive('fade-in', directive);
+
+export default directive;

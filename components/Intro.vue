@@ -1,7 +1,7 @@
 <template>
     <div class="intro" v-parallax="'assets/images/blurred-background.jpg'">
         <div class="container" v-fade-in>
-            <img class="logo" alt="Autopunch logo" :src="require('../assets/images/logo.png')">
+            <img class="logo" alt="Autopunch logo" src="~/assets/images/logo.png">
             <span class="title">
                 - Votre auto a besoin d'<span style="color: var(--color-danger)">p</span>unch ?
             </span>
@@ -14,9 +14,9 @@
 </template>
 
 <script>
-import Parallax from '@/directives/Parallax';
-import FadeIn from '@/directives/FadeIn.js';
-import Button from '@/components/Button.vue';
+import Button from '~/components/Button';
+import FadeIn from '~/plugins/fade-in.client.js';
+import Parallax from '~/plugins/parallax.client.js';
 
 export default {
     name: 'Intro',
@@ -24,8 +24,8 @@ export default {
         Button,
     },
     directives: {
+        FadeIn,
         Parallax,
-        FadeIn
     },
 };
 </script>
