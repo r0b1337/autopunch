@@ -171,6 +171,10 @@
                 </div>
             </template>
         </Card>
+
+        <hr>
+
+        <div class="snap-map"><img :src="require('@/assets/images/snap-map.jpg')" alt="Snapchat Map"></div>
     </div>
 </template>
 
@@ -277,6 +281,17 @@ export default {
 
         .title, .subtitle {
             margin-bottom: var(--space-large);
+        }
+
+        .snap-map {
+            display: block;
+            width: 100%;
+            margin: var(--space-base) 0;
+
+            img {
+                width: 30%;
+                height: auto;
+            }
         }
     }
 </style>
