@@ -5,6 +5,7 @@
         <Benefits></Benefits>
         <Performances></Performances>
         <About></About>
+        <How></How>
     </div>
 </template>
 
@@ -14,6 +15,7 @@ import Emergency from '~/components/Emergency.vue';
 import Benefits from '~/components/Benefits.vue';
 import Performances from '~/components/Performances';
 import About from '~/components/About';
+import How from '~/components/How';
 
 export default {
     components: {
@@ -22,6 +24,7 @@ export default {
         Benefits,
         Performances,
         About,
+        How,
     },
 };
 </script>

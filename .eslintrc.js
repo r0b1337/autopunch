@@ -54,5 +54,6 @@ module.exports = {
             ignoreWhenEmpty: true,
             ignores: ['div'],
         }],
+        'vue/no-v-html': 0,
     },
 };
