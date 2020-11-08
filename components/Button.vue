@@ -28,6 +28,8 @@ export default {
         border-radius: 4px;
         cursor: pointer;
 
+        transition: all 250ms ease-in-out;
+
         &:hover {
             background: hsla(0, 0%, 100%, .1);
             border-color: var(--color-light);
