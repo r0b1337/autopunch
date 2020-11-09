@@ -12,7 +12,7 @@ const directive = {
             'background-attachment': 'fixed',
         });
 
-        const position = () => el.css('background-position', `center ${window.pageYOffset * -0.2}px`);
+        const position = () => el.css('background-position', `center ${(window.pageYOffset - el.offset().top) * -0.2}px`);
         window.addEventListener('scroll', position);
     },
 };
