@@ -10,7 +10,11 @@
                 <input type="text" placeholder="Email">
             </div>
 
-            <textarea id="subject" placeholder="De quelles prestations avez vous besoin ? Transmettez nous les détails sur le modèle de votre véhicule (modèle, kilométrage, immatriculation, VIN *) pour une réponse toujours plus rapide."/>
+            <textarea
+                id="subject"
+                rows="5"
+                placeholder="De quelles prestations avez vous besoin ? Transmettez nous les détails sur le modèle de votre véhicule (modèle, kilométrage, immatriculation, VIN *) pour une réponse toujours plus rapide."
+            />
             <input id="cgu" type="checkbox"><label for="cgu">En continuant, vous acceptez nos Conditions d'utilisation et Politique de confidentialité</label>
         </form>
 
@@ -69,6 +73,8 @@ export default {
                 border-radius: var(--border-radius-base);
                 width: 100%;
                 width: -webkit-fill-available;
+                outline: none;
+                resize: none;
             }
         }
     }
