@@ -6,12 +6,13 @@
 
         <form id="contact">
             <div class="infos">
-                <input type="text" placeholder="Nom / Prénom">
-                <input type="text" placeholder="Email">
+                <input v-model="name" type="text" placeholder="Nom / Prénom">
+                <input v-model="email" type="text" placeholder="Email">
             </div>
 
             <textarea
                 id="subject"
+                v-model="message"
                 rows="5"
                 placeholder="De quelles prestations avez vous besoin ? Transmettez nous les détails sur le modèle de votre véhicule (modèle, kilométrage, immatriculation, VIN *) pour une réponse toujours plus rapide."
             />
@@ -159,11 +160,12 @@
             </Modal>
         </form>
 
-        <Button text="Envoyer"></Button>
+        <Button text="Envoyer" @click="sendMail()"></Button>
     </div>
 </template>
 
 <script>
+import axios from 'axios';
 import FadeIn from '~/plugins/fade-in.client.js';
 import Parallax from '~/plugins/parallax.client.js';
 import Modal from '~/components/Modal';
@@ -177,9 +179,23 @@ export default {
     components: {
         Modal,
     },
+    data () {
+        return {
+            name: '',
+            email: '',
+            message: '',
+        };
+    },
     methods: {
         showTOS () { this.$refs.TOS.show(); },
         showPP () { this.$refs.PP.show(); },
+        async sendMail () {
+            await axios.post('http://localhost:8080/', {
+                name: this.name,
+                email: this.email,
+                message: this.message,
+            });
+        },
     },
 };
 </script>
