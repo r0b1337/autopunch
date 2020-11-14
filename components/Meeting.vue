@@ -206,6 +206,7 @@ export default {
             toastr.$mount();
 
             $('#app').append(toastr.$el);
+        },
     },
 };
 </script>
