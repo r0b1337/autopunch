@@ -165,10 +165,12 @@
 </template>
 
 <script>
+import Vue from 'vue';
 import axios from 'axios';
 import FadeIn from '~/plugins/fade-in.client.js';
 import Parallax from '~/plugins/parallax.client.js';
 import Modal from '~/components/Modal';
+import Toastr from '~/components/Toastr';
 
 export default {
     name: 'Meeting',
@@ -189,13 +191,21 @@ export default {
     methods: {
         showTOS () { this.$refs.TOS.show(); },
         showPP () { this.$refs.PP.show(); },
-        async sendMail () {
-            await axios.post('http://localhost:8080/', {
+        sendMail () {
+            const $ = window.$;
+            const ToastrClass = Vue.extend(Toastr);
+            const promise = axios.post('http://localhost:8080/', {
                 name: this.name,
                 email: this.email,
                 message: this.message,
             });
-        },
+
+            const toastr = new ToastrClass({
+                propsData: { promise, text: 'Votre mail a ete envoye avec succes !' },
+            });
+            toastr.$mount();
+
+            $('#app').append(toastr.$el);
     },
 };
 </script>
