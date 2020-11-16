@@ -209,7 +209,9 @@ export default {
             // waiting resolution
             await promise;
             // removing toastr from the DOM 1s after resolution
-            setTimeout(this.app.toastrs = this.app.toastrs.filter(toastr => toastr.id !== id), 1000);
+            setTimeout(() => {
+                this.app.toastrs = this.app.toastrs.filter(toastr => toastr.id !== id);
+            }, 1000);
         },
     },
 };
