@@ -1,5 +1,5 @@
 <template>
-    <div ref="toastr" class="toastr" :class="{ done: !loading, enter }">
+    <div ref="toastr" class="toastr" :class="{ done: !loading, enter, success, error }">
         <div class="wrapper">
             <img class="spinner" src="~/assets/images/spinner.svg">
             <div class="text">{{ text }}</div>
@@ -24,16 +24,32 @@ export default {
     data () {
         return {
             loading: true,
+            success: false,
+            error: false,
             enter: false,
         };
     },
     async mounted () {
-        await this.wait(0); // acts like a nextTick
+        await this.wait(0); // acts like a nextTick so the enter transition can happen
+
+        const $ = window.$;
+        const toastr = $(this.$refs.toastr);
+        const text = toastr.find('.text');
+
+        toastr.css({ width: `${text.width()}px`, height: `${text.height()}px` });
+
         this.enter = true;
 
         // waiting for promise resolution + 1000ms bonus to finish loading
-        await this.promise;
         await this.wait(1000);
+        try {
+            await this.promise;
+            this.success = true;
+        } catch (error) {
+            this.error = true;
+            this.text = 'Une erreur est survenue';
+            toastr.css({ width: `${text.width()}px`, height: `${text.height()}px` });
+        }
         this.loading = false;
 
         // toastr leaves the view 1s after loading finished
@@ -56,11 +72,12 @@ export default {
 <style scoped lang="scss">
     .toastr {
         position: fixed;
+        display: flex;
+        align-items: center;
         top: var(--space-small);
         right: var(--space-small);
         max-width: 40%;
-        width: fit-content;
-        height: fit-content;
+        max-height: 400px;
         padding: var(--space-large);
         border-radius: var(--border-radius-base);
         background-color: var(--color-progress);
@@ -68,8 +85,8 @@ export default {
         transform: translateX(150%);
 
         .wrapper {
-            width: 100%;
-            height: 100%;
+            width: fit-content;
+            height: fit-content;
             position: relative;
             transition: inherit;
         }
@@ -107,6 +124,10 @@ export default {
 
         &.enter {
             transform: translateX(0);
+        }
+
+        &.error {
+            background-color: var(--color-danger);
         }
 
         transition: all 250ms ease-in-out;
