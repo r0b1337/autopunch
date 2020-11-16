@@ -165,12 +165,11 @@
 </template>
 
 <script>
-import Vue from 'vue';
 import axios from 'axios';
+import { v4 as uuid } from 'uuid';
 import FadeIn from '~/plugins/fade-in.client.js';
 import Parallax from '~/plugins/parallax.client.js';
 import Modal from '~/components/Modal';
-import Toastr from '~/components/Toastr';
 
 export default {
     name: 'Meeting',
@@ -188,24 +187,29 @@ export default {
             message: '',
         };
     },
+    computed: {
+        app () {
+            let parent = this.$parent;
+            while (parent && parent._name !== '<App>') parent = parent.$parent;
+            return parent;
+        },
+    },
     methods: {
         showTOS () { this.$refs.TOS.show(); },
         showPP () { this.$refs.PP.show(); },
-        sendMail () {
-            const $ = window.$;
-            const ToastrClass = Vue.extend(Toastr);
+        async sendMail () {
             const promise = axios.post('http://localhost:8080/', {
                 name: this.name,
                 email: this.email,
                 message: this.message,
             });
-
-            const toastr = new ToastrClass({
-                propsData: { promise, text: 'Votre mail a ete envoye avec succes !' },
-            });
-            toastr.$mount();
-
-            $('#app').append(toastr.$el);
+            const id = uuid();
+            // inserting toastr into the DOM
+            this.app.toastrs.push({ promise, text: 'Votre mail a ete envoye avec succes !', id });
+            // waiting resolution
+            await promise;
+            // removing toastr from the DOM 1s after resolution
+            setTimeout(this.app.toastrs = this.app.toastrs.filter(toastr => toastr.id !== id), 1000);
         },
     },
 };

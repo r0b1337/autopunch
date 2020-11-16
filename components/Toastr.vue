@@ -1,5 +1,5 @@
 <template>
-    <div ref="toastr" class="toastr" :class="{ done: !loading, enter, success, error }">
+    <div ref="toastr" class="toastr" :class="{ done: !loading, success, error }">
         <div class="wrapper">
             <img class="spinner" src="~/assets/images/spinner.svg">
             <div class="text">{{ text }}</div>
@@ -26,8 +26,14 @@ export default {
             loading: true,
             success: false,
             error: false,
-            enter: false,
         };
+    },
+    computed: {
+        app () {
+            let parent = this.$parent;
+            while (parent && parent._name !== '<App>') parent = parent.$parent;
+            return parent;
+        },
     },
     async mounted () {
         await this.wait(0); // acts like a nextTick so the enter transition can happen
@@ -37,8 +43,6 @@ export default {
         const text = toastr.find('.text');
 
         toastr.css({ width: `${text.width()}px`, height: `${text.height()}px` });
-
-        this.enter = true;
 
         // waiting for promise resolution + 1000ms bonus to finish loading
         await this.wait(1000);
@@ -51,15 +55,6 @@ export default {
             toastr.css({ width: `${text.width()}px`, height: `${text.height()}px` });
         }
         this.loading = false;
-
-        // toastr leaves the view 1s after loading finished
-        await this.wait(1000);
-        this.enter = false;
-
-        // destroy the toastr instance and remove element from the DOM
-        await this.wait(1000);
-        this.$destroy();
-        this.$el.parentNode.removeChild(this.$el);
     },
     methods: {
         wait (time) {
@@ -71,18 +66,14 @@ export default {
 
 <style scoped lang="scss">
     .toastr {
-        position: fixed;
         display: flex;
         align-items: center;
-        top: var(--space-small);
-        right: var(--space-small);
-        max-width: 40%;
         max-height: 400px;
         padding: var(--space-large);
+        margin: var(--space-small);
         border-radius: var(--border-radius-base);
         background-color: var(--color-progress);
         z-index: 4;
-        transform: translateX(150%);
 
         .wrapper {
             width: fit-content;
@@ -120,10 +111,6 @@ export default {
                 transform: translateX(0);
                 opacity: 1;
             }
-        }
-
-        &.enter {
-            transform: translateX(0);
         }
 
         &.error {

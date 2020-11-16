@@ -7,6 +7,14 @@
         <About></About>
         <How></How>
         <Meeting></Meeting>
+        <transition-group class="toastrs" name="slide">
+            <Toastr
+                v-for="toastr in toastrs"
+                :key="toastr.id"
+                :promise="toastr.promise"
+                :text="toastr.text"
+            ></Toastr>
+        </transition-group>
     </div>
 </template>
 
@@ -18,8 +26,10 @@ import Performances from '~/components/Performances';
 import About from '~/components/About';
 import How from '~/components/How';
 import Meeting from '~/components/Meeting';
+import Toastr from '~/components/Toastr';
 
 export default {
+    name: 'App',
     components: {
         Intro,
         Emergency,
@@ -28,6 +38,12 @@ export default {
         About,
         How,
         Meeting,
+        Toastr,
+    },
+    data () {
+        return {
+            toastrs: [],
+        };
     },
 };
 </script>
@@ -35,4 +51,25 @@ export default {
 <style lang="scss">
     @import '~/assets/style/variables.scss';
     @import '~/assets/style/global.scss';
+
+    .toastrs {
+        position: fixed;
+        width: 40%;
+        height: 100%;
+        top: 0;
+        right: 0;
+        display: flex;
+        flex-direction: column-reverse;
+        align-items: flex-end;
+        justify-content: flex-end;
+        transition: all 250ms ease-in-out;
+
+        .slide-enter, .slide-leave-to {
+            transform: translateX(150%);
+        }
+
+        .slide-leave-active {
+           position: absolute;
+        }
+    }
 </style>
