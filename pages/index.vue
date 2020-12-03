@@ -7,7 +7,7 @@
         <About></About>
         <How></How>
         <Meeting></Meeting>
-        <transition-group class="toastrs" name="slide">
+        <transition-group class="toastrs" name="slide" @beforeLeave="beforeLeave">
             <Toastr
                 v-for="toastr in toastrs"
                 :key="toastr.id"
@@ -44,6 +44,12 @@ export default {
         return {
             toastrs: [],
         };
+    },
+    methods: {
+        beforeLeave (el) {
+            const margin = parseInt(getComputedStyle(document.documentElement).getPropertyValue('--space-small'));
+            el.style.top = `${el.offsetTop - margin}px`;
+        },
     },
 };
 </script>
