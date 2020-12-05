@@ -198,7 +198,7 @@ export default {
         showTOS () { this.$refs.TOS.show(); },
         showPP () { this.$refs.PP.show(); },
         async sendMail () {
-            const promise = axios.post('http://localhost:8080/', {
+            const promise = axios.post('http://localhost:3000/', {
                 name: this.name,
                 email: this.email,
                 message: this.message,

@@ -81,4 +81,11 @@ export default {
     build: {
         transpile: ['fade-in', 'parallax', 'scroll-to'],
     },
+
+    // API Routes (https://nuxtjs.org/docs/2.x/configuration-glossary/configuration-servermiddleware)
+    serverMiddleware: [
+        { path: '/mail', handler: '~/../api/mail.js' },
+    ],
+
+    srcDir: 'client/',
 };
