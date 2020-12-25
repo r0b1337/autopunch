@@ -7,6 +7,7 @@
         <About></About>
         <How></How>
         <Meeting></Meeting>
+        <Contact></Contact>
     </div>
 </template>
 
@@ -18,6 +19,7 @@ import Performances from '~/components/Performances';
 import About from '~/components/About';
 import How from '~/components/How';
 import Meeting from '~/components/Meeting';
+import Contact from '~/components/Contact';
 
 export default {
     components: {
@@ -28,6 +30,7 @@ export default {
         About,
         How,
         Meeting,
+        Contact,
     },
 };
 </script>
