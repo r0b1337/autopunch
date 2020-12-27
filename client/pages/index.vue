@@ -7,6 +7,8 @@
         <About></About>
         <How></How>
         <Meeting></Meeting>
+        <Contact></Contact>
+        <Comments></Comments>
         <transition-group class="toastrs" name="slide" @beforeLeave="beforeLeave">
             <Toastr
                 v-for="toastr in toastrs"
@@ -27,6 +29,8 @@ import About from '~/components/About';
 import How from '~/components/How';
 import Meeting from '~/components/Meeting';
 import Toastr from '~/components/Toastr';
+import Contact from '~/components/Contact';
+import Comments from '~/components/Comments';
 
 export default {
     name: 'App',
@@ -39,6 +43,8 @@ export default {
         How,
         Meeting,
         Toastr,
+        Contact,
+        Comments,
     },
     data () {
         return {
