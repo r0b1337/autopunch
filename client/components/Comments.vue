@@ -18,13 +18,6 @@ export default {
     components: {
         Disqus,
     },
-    data () {
-        return {
-            config: {
-                language: 'fr',
-            },
-        };
-    },
 };
 </script>
 
