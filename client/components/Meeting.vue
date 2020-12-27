@@ -6,12 +6,13 @@
 
         <form id="contact">
             <div class="infos">
-                <input type="text" placeholder="Nom / Prénom">
-                <input type="text" placeholder="Email">
+                <input v-model="name" type="text" placeholder="Nom / Prénom">
+                <input v-model="email" type="text" placeholder="Email">
             </div>
 
             <textarea
                 id="subject"
+                v-model="message"
                 rows="5"
                 placeholder="De quelles prestations avez vous besoin ? Transmettez nous les détails sur le modèle de votre véhicule (modèle, kilométrage, immatriculation, VIN *) pour une réponse toujours plus rapide."
             />
@@ -159,11 +160,13 @@
             </Modal>
         </form>
 
-        <Button text="Envoyer"></Button>
+        <Button text="Envoyer" @click="sendMail()"></Button>
     </div>
 </template>
 
 <script>
+import axios from 'axios';
+import { v4 as uuid } from 'uuid';
 import FadeIn from '~/plugins/fade-in.client.js';
 import Parallax from '~/plugins/parallax.client.js';
 import Modal from '~/components/Modal';
@@ -177,9 +180,39 @@ export default {
     components: {
         Modal,
     },
+    data () {
+        return {
+            name: '',
+            email: '',
+            message: '',
+        };
+    },
+    computed: {
+        app () {
+            let parent = this.$parent;
+            while (parent && parent._name !== '<App>') parent = parent.$parent;
+            return parent;
+        },
+    },
     methods: {
         showTOS () { this.$refs.TOS.show(); },
         showPP () { this.$refs.PP.show(); },
+        async sendMail () {
+            const promise = axios.post('http://localhost:3000/mail', {
+                name: this.name,
+                email: this.email,
+                message: this.message,
+            });
+            const id = uuid();
+            // inserting toastr into the DOM
+            this.app.toastrs.push({ promise, text: 'Votre mail a ete envoye avec succes !', id });
+            // waiting resolution
+            await promise;
+            // removing toastr from the DOM 1s after resolution
+            setTimeout(() => {
+                this.app.toastrs = this.app.toastrs.filter(toastr => toastr.id !== id);
+            }, 1500);
+        },
     },
 };
 </script>
