@@ -9,6 +9,7 @@
         <Meeting></Meeting>
         <Contact></Contact>
         <Comments></Comments>
+        <Footer></Footer>
         <transition-group class="toastrs" name="slide" @beforeLeave="beforeLeave">
             <Toastr
                 v-for="toastr in toastrs"
@@ -31,6 +32,7 @@ import Meeting from '~/components/Meeting';
 import Toastr from '~/components/Toastr';
 import Contact from '~/components/Contact';
 import Comments from '~/components/Comments';
+import Footer from '~/components/Footer';
 
 export default {
     name: 'App',
@@ -45,6 +47,7 @@ export default {
         Toastr,
         Contact,
         Comments,
+        Footer,
     },
     data () {
         return {
