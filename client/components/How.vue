@@ -4,7 +4,7 @@
 
         <span class="subtitle">En 3 étapes seulement :</span>
 
-        <Steps :steps="steps"></Steps>
+        <Steps :steps="steps"/>
     </div>
 </template>
 

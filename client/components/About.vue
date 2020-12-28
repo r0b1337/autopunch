@@ -12,7 +12,7 @@
                     <span style="font: var(--font-points)">
                         Passionné par les véhicules motorisés depuis son enfance,
                         <span class="bold">Punch</span> a choisit de devenir un professionnel de l'automobile pour faire de sa passion son métier.
-                        <br>
+                        <br/>
                         Après son apprentissage il a décidé de se mettre à son compte afin
                         de proposer une solution aux particuliers qui souhaitent plus de flexibilité pour l'entretien
                         de leurs véhicules que celle proposé par un garage traditionnel.
@@ -20,13 +20,13 @@
                 </template>
             </Card>
 
-            <div class="image"><img :src="require('@/assets/images/punch-plate.jpg')" alt=""></div>
+            <div class="image"><img :src="require('@/assets/images/punch-plate.jpg')" alt=""/></div>
         </div>
 
         <Card class="law">
             <template v-slot:title>
                 <span class="bold" style="color: var(--color-danger)">Notre pratique est encadrée</span>
-                <br>
+                <br/>
                 <span class="penal">Article 635-8 du code pénal</span>
             </template>
 

@@ -4,7 +4,7 @@
         <span class="subtitle">
             Contactez nous pour toutes demandes nécessitant une intervention immédiate
         </span>
-        <Button class="button" text="06 61 36 05 10"></Button>
+        <Button class="button" text="06 61 36 05 10"/>
     </div>
 </template>
 

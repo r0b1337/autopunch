@@ -1,7 +1,7 @@
 <template>
     <div ref="toastr" class="toastr" :class="{ done: !loading, success, error }">
         <div class="wrapper">
-            <img class="spinner" src="~/assets/images/spinner.svg">
+            <img class="spinner" src="~/assets/images/spinner.svg"/>
             <div class="text">{{ text }}</div>
         </div>
     </div>

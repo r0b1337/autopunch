@@ -23,7 +23,7 @@
                 </template>
             </Card>
 
-            <div class="image"><img :src="require('@/assets/images/oil.jpg')" alt=""></div>
+            <div class="image"><img :src="require('@/assets/images/oil.jpg')" alt=""/></div>
         </div>
 
         <div class="performance">
@@ -43,7 +43,7 @@
                 </template>
             </Card>
 
-            <div class="image"><img :src="require('@/assets/images/emptying.jpg')" alt=""></div>
+            <div class="image"><img :src="require('@/assets/images/emptying.jpg')" alt=""/></div>
         </div>
 
         <div class="performance">
@@ -61,7 +61,7 @@
                 </template>
             </Card>
 
-            <div class="image"><img :src="require('@/assets/images/brake-pads.jpg')" alt=""></div>
+            <div class="image"><img :src="require('@/assets/images/brake-pads.jpg')" alt=""/></div>
         </div>
 
         <div class="performance">
@@ -79,7 +79,7 @@
                 </template>
             </Card>
 
-            <div class="image"><img :src="require('@/assets/images/brake-discs.jpg')" alt=""></div>
+            <div class="image"><img :src="require('@/assets/images/brake-discs.jpg')" alt=""/></div>
         </div>
 
         <div class="performance">
@@ -98,7 +98,7 @@
                 </template>
             </Card>
 
-            <div class="image"><img :src="require('@/assets/images/engine.jpg')" alt=""></div>
+            <div class="image"><img :src="require('@/assets/images/engine.jpg')" alt=""/></div>
         </div>
 
         <div class="performance">
@@ -115,7 +115,7 @@
                 </template>
             </Card>
 
-            <div class="image"><img :src="require('@/assets/images/car-interior.jpg')" alt=""></div>
+            <div class="image"><img :src="require('@/assets/images/car-interior.jpg')" alt=""/></div>
         </div>
 
         <div class="performance">
@@ -133,7 +133,7 @@
                 </template>
             </Card>
 
-            <div class="image"><img :src="require('@/assets/images/battery.jpg')" alt=""></div>
+            <div class="image"><img :src="require('@/assets/images/battery.jpg')" alt=""/></div>
         </div>
 
         <div class="performance">
@@ -153,7 +153,7 @@
                 </template>
             </Card>
 
-            <div class="image"><img :src="require('@/assets/images/car-exterior.jpg')" alt=""></div>
+            <div class="image"><img :src="require('@/assets/images/car-exterior.jpg')" alt=""/></div>
         </div>
 
         <Card>
@@ -161,7 +161,7 @@
             <template v-slot:content>
                 <span class="card-subtitle" style="text-align: center">Les frais de déplacement sont déterminés en fonction de la distance qui vous sépare de Noisy-Le-Grand</span>
 
-                <br>
+                <br/>
 
                 <div class="places">
                     <span>Dans Noisy-Le-GRAND : <span class="bold">20€</span></span>
@@ -172,9 +172,9 @@
             </template>
         </Card>
 
-        <hr>
+        <hr/>
 
-        <div class="snap-map"><img :src="require('@/assets/images/snap-map.jpg')" alt="Snapchat Map"></div>
+        <div class="snap-map"><img :src="require('@/assets/images/snap-map.jpg')" alt="Snapchat Map"/></div>
     </div>
 </template>
 

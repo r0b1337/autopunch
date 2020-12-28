@@ -23,9 +23,9 @@ module.exports = {
         'comma-dangle': ['error', 'always-multiline'],
         'vue/html-self-closing': ['error', {
             html: {
-                void: 'never',
+                void: 'always',
                 normal: 'always',
-                component: 'never',
+                component: 'always',
             },
             svg: 'always',
         }],

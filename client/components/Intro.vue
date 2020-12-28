@@ -1,14 +1,14 @@
 <template>
     <div class="intro" v-parallax="'assets/images/blurred-background.jpg'">
         <div class="container" v-fade-in>
-            <img class="logo" alt="Autopunch logo" src="~/assets/images/logo.png">
+            <img class="logo" alt="Autopunch logo" src="~/assets/images/logo.png"/>
             <span class="title">
                 - Votre auto a besoin d'<span style="color: var(--color-danger)">p</span>unch ?
             </span>
             <span class="subtitle">- Assez perdu de temps en vous déplaçant au garage ?</span>
             <span class="subtitle">- N'en dîtes pas plus !</span>
             <span class="subtitle">Nous intervenons où vous le souhaitez.</span>
-            <Button class="button" text="DEMANDEZ UN RENDEZ-VOUS"></Button>
+            <Button class="button" text="DEMANDEZ UN RENDEZ-VOUS"/>
         </div>
     </div>
 </template>
