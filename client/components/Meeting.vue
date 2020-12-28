@@ -261,16 +261,6 @@ export default {
 
             label {
                 font: var(--font-points);
-
-                .link {
-                    cursor: pointer;
-                    text-decoration: underline;
-                    transition: color 250ms ease-in-out;
-
-                    &:hover {
-                        color: #61daff;
-                    }
-                }
             }
         }
     }
