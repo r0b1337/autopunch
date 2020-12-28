@@ -1,22 +1,22 @@
 <template>
     <div id="app">
-        <Intro></Intro>
-        <Emergency></Emergency>
-        <Benefits></Benefits>
-        <Performances></Performances>
-        <About></About>
-        <How></How>
-        <Meeting></Meeting>
-        <Contact></Contact>
-        <Comments></Comments>
-        <Footer></Footer>
+        <Intro/>
+        <Emergency/>
+        <Benefits/>
+        <Performances/>
+        <About/>
+        <How/>
+        <Meeting/>
+        <Contact/>
+        <Comments/>
+        <Footer/>
         <transition-group class="toastrs" name="slide" @beforeLeave="beforeLeave">
             <Toastr
                 v-for="toastr in toastrs"
                 :key="toastr.id"
                 :promise="toastr.promise"
                 :text="toastr.text"
-            ></Toastr>
+            />
         </transition-group>
     </div>
 </template>

@@ -2,7 +2,7 @@
     <div class="comments" v-fade-in>
         <span class="title">Ce que l'on pense de nous</span>
         <span class="subtitle danger">Merci</span>
-        <Disqus shortname="autopunch" lang="fr_FR"></Disqus>
+        <Disqus shortname="autopunch" lang="fr_FR"/>
     </div>
 </template>
 
