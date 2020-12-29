@@ -20,6 +20,11 @@ export default {
                 src: 'https://code.jquery.com/jquery-3.5.1.min.js',
                 type: 'text/javascript',
             },
+            {
+                src: 'https://platform.twitter.com/widgets.js',
+                type: 'text/javascript',
+                async: true,
+            },
         ],
     },
 
