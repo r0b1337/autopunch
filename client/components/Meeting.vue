@@ -4,7 +4,7 @@
         <span class="subtitle">Soit par téléphone ou par email via notre formulaire ci dessous.</span>
         <span class="number">0661360510</span>
 
-        <form id="contact">
+        <form>
             <div class="infos">
                 <input v-model="name" type="text" placeholder="Nom / Prénom"/>
                 <input v-model="email" type="text" placeholder="Email"/>
