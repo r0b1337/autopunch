@@ -1,5 +1,5 @@
 <template>
-    <div class="emergency" v-parallax="'assets/images/ferrari-wheel.jpg'" v-fade-in>
+    <div id="emergency" v-parallax="'assets/images/ferrari-wheel.jpg'" v-fade-in>
         <span class="title">UNE URGENCE ?</span>
         <span class="subtitle">
             Contactez nous pour toutes demandes nécessitant une intervention immédiate
@@ -26,7 +26,7 @@ export default {
 </script>
 
 <style scoped lang="scss">
-    .emergency {
+    #emergency {
         height: auto;
         overflow: hidden;
         position: relative;

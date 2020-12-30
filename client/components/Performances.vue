@@ -1,5 +1,5 @@
 <template>
-    <div class="performances" v-fade-in>
+    <div id="performances" v-fade-in>
         <span class="title">NOS PRESTATIONS</span>
 
         <span class="subtitle" style="color: var(--color-danger)">Nos prestations sont facturées TTC</span>
@@ -194,7 +194,7 @@ export default {
 </script>
 
 <style scoped lang="scss">
-    .performances {
+    #performances {
         height: auto;
         overflow: hidden;
         position: relative;

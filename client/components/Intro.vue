@@ -1,5 +1,5 @@
 <template>
-    <div class="intro" v-parallax="'assets/images/blurred-background.jpg'">
+    <div id="intro" v-parallax="'assets/images/blurred-background.jpg'">
         <div class="container" v-fade-in>
             <img class="logo" alt="Autopunch logo" src="~/assets/images/logo.png"/>
             <span class="title">
@@ -31,7 +31,7 @@ export default {
 </script>
 
 <style scoped lang="scss">
-    .intro {
+    #intro {
         height: auto;
         overflow: hidden;
         position: relative;

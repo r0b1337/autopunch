@@ -1,5 +1,5 @@
 <template>
-    <div class="comments" v-fade-in>
+    <div id="comments" v-fade-in>
         <span class="title">Ce que l'on pense de nous</span>
         <span class="subtitle danger">Merci</span>
         <Disqus shortname="autopunch" lang="fr"/>
@@ -22,7 +22,7 @@ export default {
 </script>
 
 <style scoped lang="scss">
-    .comments {
+    #comments {
         padding: calc(var(--space-x-large) / 2) var(--space-large);
         background-color: #e5ecf1;
 
