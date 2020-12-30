@@ -1,5 +1,6 @@
 <template>
     <div id="app">
+        <Header/>
         <Intro/>
         <Emergency/>
         <Benefits/>
@@ -22,6 +23,7 @@
 </template>
 
 <script>
+import Header from '~/components/Header';
 import Intro from '~/components/Intro.vue';
 import Emergency from '~/components/Emergency.vue';
 import Benefits from '~/components/Benefits.vue';
@@ -37,6 +39,7 @@ import Footer from '~/components/Footer';
 export default {
     name: 'App',
     components: {
+        Header,
         Intro,
         Emergency,
         Benefits,
