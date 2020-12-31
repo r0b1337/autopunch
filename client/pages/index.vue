@@ -1,7 +1,11 @@
 <template>
     <div id="app">
-        <Header/>
-        <Intro/>
+        <transition class="header" name="slide-top">
+            <Header v-if="fixed" key="fixed" fixed/>
+            <Header v-else key="absolute"/>
+        </transition>
+
+        <Intro ref="intro"/>
         <Emergency/>
         <Benefits/>
         <Performances/>
@@ -10,8 +14,10 @@
         <Meeting/>
         <Contact/>
         <Comments/>
+
         <Footer/>
-        <transition-group class="toastrs" name="slide" @beforeLeave="beforeLeave">
+
+        <transition-group class="toastrs" name="slide-right" @beforeLeave="beforeLeave">
             <Toastr
                 v-for="toastr in toastrs"
                 :key="toastr.id"
@@ -23,6 +29,7 @@
 </template>
 
 <script>
+import _ from 'lodash';
 import Header from '~/components/Header';
 import Intro from '~/components/Intro.vue';
 import Emergency from '~/components/Emergency.vue';
@@ -55,12 +62,24 @@ export default {
     data () {
         return {
             toastrs: [],
+            fixed: false,
         };
+    },
+    mounted () {
+        if (!process.browser) return;
+
+        window.onscroll = _.debounce(this.handleScroll, 5);
+
+        this.handleScroll();
     },
     methods: {
         beforeLeave (el) {
             const margin = parseInt(getComputedStyle(document.documentElement).getPropertyValue('--space-small'));
             el.style.top = `${el.offsetTop - margin}px`;
+        },
+        handleScroll () {
+            const headerHeight = parseInt(getComputedStyle(document.documentElement).getPropertyValue('--header-height'));
+            this.fixed = window.pageYOffset > this.$refs.intro.$el.offsetHeight - headerHeight;
         },
     },
 };
@@ -69,6 +88,13 @@ export default {
 <style lang="scss">
     @import '~/assets/style/variables.scss';
     @import '~/assets/style/global.scss';
+</style>
+
+<style lang="scss" scoped>
+    .header {
+        &.slide-top-enter-active, &.slide-top-leave-active { transition: transform 250ms ease-in-out; }
+        &.slide-top-enter, &.slide-top-leave-to { transform: translateY(-100%); }
+    }
 
     .toastrs {
         position: fixed;
@@ -82,11 +108,11 @@ export default {
         justify-content: flex-end;
         transition: all 250ms ease-in-out;
 
-        .slide-enter, .slide-leave-to {
+        .slide-right-enter, .slide-right-leave-to {
             transform: translateX(150%);
         }
 
-        .slide-leave-active {
+        .slide-right-leave-active {
            position: absolute;
         }
     }
