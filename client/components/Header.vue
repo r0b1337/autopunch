@@ -1,5 +1,5 @@
 <template>
-    <div class="header">
+    <div class="header" :class="{ fixed }">
         <div class="left">
             <div class="link" @click="scrollTo('#intro')">Accueil</div>
             <div class="link" @click="scrollTo('#emergency')">Une urgence ?</div>
@@ -21,11 +21,17 @@
 
 export default {
     name: 'Header',
+    props: {
+        fixed: {
+            type: Boolean,
+            default: false,
+        },
+    },
     methods: {
         scrollTo (hash) {
             const $ = window.$;
 
-            $('#app').animate({ scrollTop: $(hash).offset().top });
+            $('html, body').animate({ scrollTop: $(hash).offset().top - 62 });
 
             window.location.hash = hash;
         },
@@ -35,7 +41,7 @@ export default {
 
 <style scoped lang="scss">
     .header {
-        z-index: 1;
+        z-index: 2;
         display: flex;
         justify-content: center;
         align-items: center;
@@ -43,10 +49,9 @@ export default {
         top: 0;
         left: 0;
         color: var(--color-light);
-        margin: var(--space-base) 0;
+        padding: var(--space-tiny) 0;
         background-color: transparent;
         width: 100%;
-        height: 50px;
 
         .logo {
             margin: 0 var(--space-large);
@@ -73,5 +78,21 @@ export default {
 
         .right { justify-content: flex-start; }
         .left { justify-content: flex-end; }
+
+        &.fixed {
+            position: fixed;
+            background-color: var(--color-light);
+            color: var(--color-light-dark);
+            box-shadow: 0 1px 1px rgba(0, 0, 0, 0.25);
+            height: var(--header-height);
+
+            .logo {
+                height: 50px;
+            }
+
+            .link {
+                color: var(--color-light-dark);
+            }
+        }
     }
 </style>
