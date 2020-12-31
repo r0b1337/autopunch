@@ -1,5 +1,5 @@
 <template>
-    <div class="about" v-fade-in>
+    <div id="about" v-fade-in>
         <span class="title" style="color: var(--color-danger)">VOTRE MÉCANICIEN À DOMICILE.</span>
 
         <div class="who">
@@ -65,7 +65,7 @@ export default {
 </script>
 
 <style scoped lang="scss">
-    .about {
+    #about {
         height: auto;
         overflow: hidden;
         position: relative;

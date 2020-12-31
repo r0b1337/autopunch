@@ -1,5 +1,5 @@
 <template>
-    <div class="how" v-fade-in>
+    <div id="how" v-fade-in>
         <span class="title">COMMENT PROCÉDER ?</span>
 
         <span class="subtitle">En 3 étapes seulement :</span>
@@ -67,7 +67,7 @@ export default {
 </script>
 
 <style scoped lang="scss">
-    .how {
+    #how {
         padding: var(--space-x-large) 0;
 
         .title {

@@ -1,5 +1,5 @@
 <template>
-    <div class="benefits" v-fade-in>
+    <div id="benefits" v-fade-in>
         <span class="title">LES AVANTAGES</span>
 
         <Card>
@@ -52,7 +52,7 @@ export default {
 </script>
 
 <style scoped lang="scss">
-    .benefits {
+    #benefits {
         height: auto;
         overflow: hidden;
         position: relative;

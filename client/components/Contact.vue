@@ -1,5 +1,5 @@
 <template>
-    <div class="contact" v-fade-in>
+    <div id="contact" v-fade-in>
         <span class="title">Nous contacter</span>
         <span class="subtitle danger">Pour toute information supplémentaire :</span>
         <div class="infos">
@@ -31,7 +31,7 @@ export default {
 </script>
 
 <style scoped lang="scss">
-    .contact {
+    #contact {
         padding: var(--space-x-large);
         color: var(--color-dark);
 
