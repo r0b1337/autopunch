@@ -8,13 +8,9 @@
 </template>
 
 <script>
-import FadeIn from '~/plugins/fade-in.client.js';
 
 export default {
     name: 'CallMe',
-    directives: {
-        FadeIn,
-    },
 };
 </script>
 
