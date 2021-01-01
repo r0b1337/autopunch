@@ -1,6 +1,6 @@
 <template>
     <a class="call-me" href="tel:0661360510">
-        <ion-icon name="phone-portrait-outline" size="large"/>
+        <ion-icon name="phone-portrait-outline"/>
         <span class="number">
             0661360510
         </span>
@@ -28,8 +28,8 @@ export default {
         height: 52px;
         width: 100%;
         text-decoration: none;
+        font: var(--font-button);
 
         ion-icon { margin-right: var(--space-small); }
-        .number { font: var(--font-button); }
     }
 </style>
