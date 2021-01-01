@@ -16,6 +16,7 @@
         <Comments/>
 
         <Footer/>
+        <CallMe/>
 
         <transition-group class="toastrs" name="slide-right" @beforeLeave="beforeLeave">
             <Toastr
@@ -42,6 +43,7 @@ import Toastr from '~/components/Toastr';
 import Contact from '~/components/Contact';
 import Comments from '~/components/Comments';
 import Footer from '~/components/Footer';
+import CallMe from '~/components/CallMe';
 
 export default {
     name: 'App',
@@ -58,6 +60,7 @@ export default {
         Contact,
         Comments,
         Footer,
+        CallMe,
     },
     data () {
         return {
