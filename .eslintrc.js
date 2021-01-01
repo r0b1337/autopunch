@@ -52,7 +52,10 @@ module.exports = {
         'vue/singleline-html-element-content-newline': ['error', {
             ignoreWhenNoAttributes: true,
             ignoreWhenEmpty: true,
-            ignores: ['div'],
+            ignores: [
+                'div',
+                'span',
+            ],
         }],
         'vue/no-v-html': 0,
     },
