@@ -1,39 +1,34 @@
 <template>
     <div class="header" :class="{ fixed }">
         <div class="left">
-            <div class="link" @click="scrollTo('#intro')">Accueil</div>
-            <div class="link" @click="scrollTo('#emergency')">Une urgence ?</div>
-            <div class="link" @click="scrollTo('#performances')">Nos prestations</div>
-            <div class="link" @click="scrollTo('#about')">Concept</div>
+            <Link hash="#intro" text="Accueil"/>
+            <Link hash="#emergency" text="Une urgence ?"/>
+            <Link hash="#performances" text="Nos prestations"/>
+            <Link hash="#about" text="Concept"/>
         </div>
 
         <img class="logo" alt="Autopunch logo" src="~/assets/images/logo.png"/>
 
         <div class="right">
-            <div class="link" @click="scrollTo('#how')">Comment ça roule ?</div>
-            <div class="link" @click="scrollTo('#contact')">Nous contacter</div>
-            <div class="link" @click="scrollTo('#comments')">Avis</div>
+            <Link hash="#how" text="Comment ça roule ?"/>
+            <Link hash="#contact" text="Nous contacter"/>
+            <Link hash="#comments" text="Avis"/>
         </div>
     </div>
 </template>
 
 <script>
+import Link from '~/components/Link';
 
 export default {
     name: 'Header',
+    components: {
+        Link,
+    },
     props: {
         fixed: {
             type: Boolean,
             default: false,
-        },
-    },
-    methods: {
-        scrollTo (hash) {
-            const $ = window.$;
-
-            $('html, body').animate({ scrollTop: $(hash).offset().top - 62 });
-
-            window.location.hash = hash;
         },
     },
 };
@@ -62,18 +57,6 @@ export default {
             display: flex;
             align-items: center;
             width: 100%;
-
-            .link {
-                all: unset;
-                margin: 0 var(--space-small);
-                color: var(--color-light);
-                text-decoration: none;
-
-                &:hover {
-                    text-decoration: underline;
-                    color: unset;
-                }
-            }
         }
 
         .right { justify-content: flex-start; }
