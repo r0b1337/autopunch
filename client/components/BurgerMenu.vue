@@ -8,20 +8,26 @@
             </div>
 
             <div class="menu" :class="{ open }">
-                <div>test</div>
-                <div>test</div>
-                <div>test</div>
-                <div>test</div>
-                <div>test</div>
+                <div class="item"><Link hash="#intro" text="Accueil" color="var(--color-dark)" @click="open = false"/></div>
+                <div class="item"><Link hash="#emergency" text="Une urgence ?" color="var(--color-dark)" @click="open = false"/></div>
+                <div class="item"><Link hash="#performances" text="Nos prestations" color="var(--color-dark)" @click="open = false"/></div>
+                <div class="item"><Link hash="#about" text="Concept" color="var(--color-dark)" @click="open = false"/></div>
+                <div class="item"><Link hash="#how" text="Comment ça roule ?" color="var(--color-dark)" @click="open = false"/></div>
+                <div class="item"><Link hash="#contact" text="Nous contacter" color="var(--color-dark)" @click="open = false"/></div>
+                <div class="item"><Link hash="#comments" text="Avis" color="var(--color-dark)" @click="open = false"/></div>
             </div>
         </div>
     </div>
 </template>
 
 <script>
+import Link from '~/components/Link';
 
 export default {
     name: 'BurgerMenu',
+    components: {
+        Link,
+    },
     data () {
         return {
             open: false,
@@ -84,6 +90,8 @@ export default {
             .menu {
                 background-color: var(--color-light);
                 color: var(--color-light-dark);
+                padding: var(--space-large);
+                padding-top: calc(var(--space-large) * 1.25);
                 position: absolute;
                 top: 0;
                 width: 100%;
@@ -91,9 +99,14 @@ export default {
                 transition: inherit;
                 transform: translateY(-100%);
 
-                &.open {
-                    transform: translateY(0);
+                .item {
+                    padding: calc(var(--space-small) * 1.25) 0;
+                    padding-left: var(--space-base);
+                    border-bottom: 1px solid #eee;
+                    text-align: left;
                 }
+
+                &.open { transform: translateY(0); }
             }
         }
     }
