@@ -23,10 +23,13 @@ export default {
     methods: {
         scrollTo (hash) {
             const $ = window.$;
+            const headerHeight = parseInt(getComputedStyle(document.documentElement).getPropertyValue('--header-height'));
 
-            $('html, body').animate({ scrollTop: $(hash).offset().top - 62 });
+            $('html, body').animate({ scrollTop: $(hash).offset().top - headerHeight });
 
             window.location.hash = hash;
+
+            this.$emit('click');
         },
     },
 };
