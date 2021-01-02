@@ -1,5 +1,5 @@
 <template>
-    <div class="meeting" v-fade-in v-parallax="'assets/images/engine-tools.jpg'">
+    <div id="meeting" v-fade-in v-parallax="'assets/images/engine-tools.jpg'">
         <span class="title">PRENEZ RENDEZ-VOUS </span>
         <span class="subtitle">Soit par téléphone ou par email via notre formulaire ci dessous.</span>
         <span class="number">0661360510</span>
@@ -218,7 +218,7 @@ export default {
 </script>
 
 <style scoped lang="scss">
-    .meeting {
+    #meeting {
         background-color: var(--color-grey);
         color: var(--color-light);
         padding: var(--space-large) 0;
