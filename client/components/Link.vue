@@ -41,6 +41,7 @@ export default {
         margin: 0 var(--space-small);
         color: var(--color-light);
         text-decoration: none;
+        cursor: pointer;
 
         &:hover {
             text-decoration: underline;
