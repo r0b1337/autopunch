@@ -37,7 +37,7 @@ export default {
         }
 
         &.selected {
-            font-weight: 500;
+            text-decoration: underline;
         }
     }
 </style>
