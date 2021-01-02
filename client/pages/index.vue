@@ -16,8 +16,8 @@
         <Contact/>
         <Comments/>
 
-        <Footer/>
-        <CallMe/>
+        <Footer :class="{ 'extra-padding': $root.mobile }"/>
+        <CallMe v-if="$root.mobile"/>
 
         <transition-group class="toastrs" name="slide-right" @beforeLeave="beforeLeave">
             <Toastr
@@ -115,6 +115,10 @@ export default {
     .header {
         &.slide-top-enter-active, &.slide-top-leave-active { transition: transform 250ms ease-in-out; }
         &.slide-top-enter, &.slide-top-leave-to { transform: translateY(-100%); }
+    }
+
+    .footer {
+        &.extra-padding { padding-bottom: var(--space-x-large); }
     }
 
     .toastrs {
