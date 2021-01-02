@@ -8,11 +8,11 @@
                 <span class="text">auto.<span class="danger">punch</span>63@gmail.com</span>
             </div>
             <div class="info snapchat">
-                <img :src="require('@/assets/images/snap.jpg')" alt="Letter"/>
+                <img :src="require('@/assets/images/snap.jpg')" alt="Snapchat"/>
                 <span class="text">m<span class="danger">punch</span>63</span>
             </div>
             <div class="info number">
-                <img :src="require('@/assets/images/phone.jpg')" alt="Letter"/>
+                <img :src="require('@/assets/images/phone.jpg')" alt="Phone"/>
                 <span class="text number">0661360510</span>
             </div>
         </div>
