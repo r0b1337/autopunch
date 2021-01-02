@@ -1,5 +1,5 @@
 <template>
-    <div class="link" :style="{ color }" @click="scrollTo(hash)">{{ text }}</div>
+    <div class="link" :style="{ color }" :class="{ selected: $route.hash === hash }" @click="scrollTo(hash)">{{ text }}</div>
 </template>
 
 <script>
@@ -45,6 +45,10 @@ export default {
         &:hover {
             text-decoration: underline;
             color: unset;
+        }
+
+        &.selected {
+            font-weight: 500;
         }
     }
 </style>
