@@ -15,6 +15,7 @@
                 <div class="item"><Link hash="#how" text="Comment ça roule ?" color="var(--color-dark)" @click="open = false"/></div>
                 <div class="item"><Link hash="#contact" text="Nous contacter" color="var(--color-dark)" @click="open = false"/></div>
                 <div class="item"><Link hash="#comments" text="Avis" color="var(--color-dark)" @click="open = false"/></div>
+                <Button text="RENDEZ-VOUS" inline @click="open = false && $root.scrollTo('#meeting')"/>
             </div>
         </div>
     </div>
@@ -96,6 +97,7 @@ export default {
                 top: 0;
                 width: 100%;
                 z-index: 3;
+                text-align: left;
                 transition: inherit;
                 transform: translateY(-100%);
 
@@ -103,8 +105,10 @@ export default {
                     padding: calc(var(--space-small) * 1.25) 0;
                     padding-left: var(--space-base);
                     border-bottom: 1px solid #eee;
-                    text-align: left;
+
                 }
+
+                :last-child { margin-top: calc(var(--space-small) * 1.25); }
 
                 &.open { transform: translateY(0); }
             }
