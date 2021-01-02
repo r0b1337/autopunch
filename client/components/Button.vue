@@ -27,6 +27,7 @@ export default {
         font: var(--font-button);
         color: var(--color-light);
         background-color: transparent;
+        text-align: center;
 
         border: 2px solid var(--color-light);
         border-radius: 4px;
@@ -46,7 +47,7 @@ export default {
 
         &.inline:hover {
             opacity: 0.7;
-            transform: scale(0.8);
+            transform: scale(0.85);
         }
 
         &:not(.inline):hover {
