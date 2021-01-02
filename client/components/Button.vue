@@ -1,5 +1,5 @@
 <template>
-    <div class="container" @click="$emit('click')">{{ text }}</div>
+    <div class="container" :class="{ inline }" @click="$emit('click')">{{ text }}</div>
 </template>
 
 <script>
@@ -9,6 +9,10 @@ export default {
         text: {
             type: String,
             default: '',
+        },
+        inline: {
+            type: Boolean,
+            default: false,
         },
     },
 };
@@ -30,7 +34,22 @@ export default {
 
         transition: all 250ms ease-in-out;
 
-        &:hover {
+        &.inline {
+            font: var(--font-points-bold);
+            background-color: var(--color-danger);
+            color: var(--color-light);
+            padding: var(--space-small);
+            border: none;
+            margin: 0 var(--space-base);
+            transform: scale(0.9);
+        }
+
+        &.inline:hover {
+            opacity: 0.7;
+            transform: scale(0.8);
+        }
+
+        &:not(.inline):hover {
             background: hsla(0, 0%, 100%, .1);
             border-color: var(--color-light);
         }
