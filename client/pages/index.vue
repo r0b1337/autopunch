@@ -1,6 +1,7 @@
 <template>
     <div id="app">
-        <transition class="header" name="slide-top">
+        <BurgerMenu v-if="$root.mobile"/>
+        <transition v-else class="header" name="slide-top">
             <Header v-if="fixed" key="fixed" fixed/>
             <Header v-else key="absolute"/>
         </transition>
@@ -44,11 +45,13 @@ import Contact from '~/components/Contact';
 import Comments from '~/components/Comments';
 import Footer from '~/components/Footer';
 import CallMe from '~/components/CallMe';
+import BurgerMenu from '~/components/BurgerMenu';
 
 export default {
     name: 'App',
     components: {
         Header,
+        BurgerMenu,
         Intro,
         Emergency,
         Benefits,
@@ -72,8 +75,10 @@ export default {
         if (!process.browser) return;
 
         window.onscroll = _.debounce(this.handleScroll, 5);
+        window.onresize = this.handleResize;
 
         this.handleScroll();
+        this.handleResize();
 
         this.$root.scrollTo = function (hash) {
             const $ = window.$;
@@ -82,8 +87,6 @@ export default {
             $('html, body').animate({ scrollTop: $(hash).offset().top - headerHeight });
 
             window.location.hash = hash;
-
-            this.$emit('click');
         };
     },
     methods: {
@@ -94,6 +97,10 @@ export default {
         handleScroll () {
             const headerHeight = parseInt(getComputedStyle(document.documentElement).getPropertyValue('--header-height'));
             this.fixed = window.pageYOffset > this.$refs.intro.$el.offsetHeight - headerHeight;
+        },
+        handleResize () {
+            this.$root.mobile = window.innerWidth < 728;
+            this.$forceUpdate();
         },
     },
 };
