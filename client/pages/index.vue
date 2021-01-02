@@ -74,6 +74,17 @@ export default {
         window.onscroll = _.debounce(this.handleScroll, 5);
 
         this.handleScroll();
+
+        this.$root.scrollTo = function (hash) {
+            const $ = window.$;
+            const headerHeight = parseInt(getComputedStyle(document.documentElement).getPropertyValue('--header-height'));
+
+            $('html, body').animate({ scrollTop: $(hash).offset().top - headerHeight });
+
+            window.location.hash = hash;
+
+            this.$emit('click');
+        };
     },
     methods: {
         beforeLeave (el) {

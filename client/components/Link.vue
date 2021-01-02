@@ -1,5 +1,5 @@
 <template>
-    <div class="link" :style="{ color }" :class="{ selected: $route.hash === hash }" @click="scrollTo(hash)">{{ text }}</div>
+    <div class="link" :style="{ color }" :class="{ selected: $route.hash === hash }" @click="$root.scrollTo(hash)">{{ text }}</div>
 </template>
 
 <script>
@@ -18,18 +18,6 @@ export default {
         color: {
             type: String,
             default: '',
-        },
-    },
-    methods: {
-        scrollTo (hash) {
-            const $ = window.$;
-            const headerHeight = parseInt(getComputedStyle(document.documentElement).getPropertyValue('--header-height'));
-
-            $('html, body').animate({ scrollTop: $(hash).offset().top - headerHeight });
-
-            window.location.hash = hash;
-
-            this.$emit('click');
         },
     },
 };
