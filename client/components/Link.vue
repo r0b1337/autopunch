@@ -1,5 +1,5 @@
 <template>
-    <div class="link" :style="{ color }" :class="{ selected: $route.hash === hash }" @click="$root.scrollTo(hash)">{{ text }}</div>
+    <div class="link" :style="{ color }" :class="{ selected: $route.hash === hash }" @click="$emit('click') && $root.scrollTo(hash)">{{ text }}</div>
 </template>
 
 <script>
