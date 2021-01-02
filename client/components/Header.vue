@@ -13,17 +13,20 @@
             <Link hash="#how" text="Comment ça roule ?"/>
             <Link hash="#contact" text="Nous contacter"/>
             <Link hash="#comments" text="Avis"/>
+            <Button text="RENDEZ-VOUS" inline @click="$root.scrollTo('#meeting')"/>
         </div>
     </div>
 </template>
 
 <script>
 import Link from '~/components/Link';
+import Button from '~/components/Button';
 
 export default {
     name: 'Header',
     components: {
         Link,
+        Button,
     },
     props: {
         fixed: {
