@@ -1,13 +1,28 @@
 <template>
     <div class="steps">
-        <div v-for="(step, index) in steps" :key="index" class="step">
-            <div class="number">
-                <div :class="{ hidden: !index }" class="left line"/>
-                <span class="digit">{{ index + 1 }}</span>
-                <div :class="{ hidden: index === steps.length - 1 }" class="right line"/>
+        <div v-if="!mobile" class="steps">
+            <div v-for="(step, index) in steps" :key="index" class="step">
+                <div class="number">
+                    <div :class="{ hidden: !index }" class="left line"/>
+                    <span class="digit">{{ index + 1 }}</span>
+                    <div :class="{ hidden: index === steps.length - 1 }" class="right line"/>
+                </div>
+                <div ref="title" class="step-title">{{ step.title }}</div>
+                <div class="content" v-html="step.content"/>
             </div>
-            <div ref="title" class="step-title">{{ step.title }}</div>
-            <div class="content" v-html="step.content"/>
+        </div>
+        <div v-else class="vertical">
+            <div v-for="(step, index) in steps" :key="index" class="step">
+                <div class="top number">
+                    <span class="digit">{{ index + 1 }}</span>
+                    <div ref="title" class="step-title">{{ step.title }}</div>
+                </div>
+
+                <div class="bottom">
+                    <div class="content" v-html="step.content"/>
+                    <div :class="{ hidden: index === steps.length - 1 }" class="line"/>
+                </div>
+            </div>
         </div>
     </div>
 </template>
@@ -22,8 +37,17 @@ export default {
             default: () => [],
         },
     },
+    data () {
+        return {
+            mobile: false,
+        };
+    },
     mounted () {
-        this.fixTitles();
+        if (!process.browser) return;
+
+        this.mobile = window.innerWidth < 728;
+
+        if (!this.mobile) this.fixTitles();
     },
     methods: {
         fixTitles () {
@@ -104,6 +128,62 @@ export default {
             .content {
                 font: var(--font-points);
                 line-height: 150%;
+            }
+        }
+
+        .vertical {
+            margin-top: var(--space-large);
+
+            .step {
+                max-width: unset;
+                align-items: flex-start;
+                flex-direction: column;
+                display: inline-flex;
+                max-width: 70%;
+                margin-bottom: var(--space-base);
+                padding-bottom: var(--space-base);
+
+                .top, .bottom {
+                    flex-direction: row;
+                    justify-content: flex-start;
+                }
+
+                .top {
+                    margin-bottom: var(--space-small);
+                    margin-top: 0;
+
+                    .step-title {
+                        height: unset;
+                        width: max-content;
+                    }
+
+                    .digit { margin-right: var(--space-base); }
+                }
+
+                .bottom {
+                    position: relative;
+                    margin-top: 0;
+
+                    .content {
+                        text-align: left;
+                        float: left;
+                        margin-left: calc(54px + var(--space-base));
+                        margin-top: 0;
+                        margin-bottom: 0;
+                    }
+
+                    .line {
+                        content: '';
+                        position: absolute;
+                        display: inline-block;
+                        width: 1px;
+                        left: 27px;
+                        top: var(--space-tiny);
+                        height: 110%;
+                        background-color: var(--color-grey);
+                        opacity: 0.3;
+                    }
+                }
             }
         }
     }
