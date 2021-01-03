@@ -2,7 +2,7 @@
     <div id="meeting" v-fade-in v-parallax="'assets/images/engine-tools.jpg'">
         <span class="title">PRENEZ RENDEZ-VOUS </span>
         <span class="subtitle">Soit par téléphone ou par email via notre formulaire ci dessous.</span>
-        <span class="number">0661360510</span>
+        <a class="number link" href="tel:0661360510">0661360510</a>
 
         <form>
             <div class="infos">
@@ -234,6 +234,7 @@ export default {
         .number {
             display: block;
             font: var(--font-large);
+            color: var(--color-light);
             text-decoration: underline;
             margin-bottom: var(--space-large);
         }
