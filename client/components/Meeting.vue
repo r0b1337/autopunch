@@ -218,6 +218,8 @@ export default {
 </script>
 
 <style scoped lang="scss">
+    @import '~/assets/style/breakpoints.scss';
+
     #meeting {
         background-color: var(--color-grey);
         color: var(--color-light);
@@ -262,6 +264,16 @@ export default {
 
             label {
                 font: var(--font-points);
+            }
+        }
+
+        @media (max-width: $mobile-breakpoint) {
+            form {
+                padding: 0 var(--space-base);
+
+                .infos {
+                    flex-direction: column;
+                }
             }
         }
     }
