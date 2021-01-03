@@ -13,7 +13,7 @@
             </div>
             <div class="info number">
                 <img :src="require('@/assets/images/phone.jpg')" alt="Phone"/>
-                <span class="text number">0661360510</span>
+                <a class="text number" href="tel:0661360510">0661360510</a>
             </div>
         </div>
     </div>
