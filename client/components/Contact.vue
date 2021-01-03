@@ -31,6 +31,8 @@ export default {
 </script>
 
 <style scoped lang="scss">
+    @import '~/assets/style/breakpoints.scss';
+
     #contact {
         padding: var(--space-x-large);
         color: var(--color-dark);
@@ -55,6 +57,7 @@ export default {
 
                 img {
                     max-width: 350px;
+                    height: 250px;
                 }
 
                 &.snapchat img {
@@ -67,6 +70,36 @@ export default {
 
                     &.number {
                         text-decoration: underline;
+                    }
+                }
+            }
+        }
+
+        @media (max-width: $mobile-breakpoint) {
+            padding: var(--space-large);
+
+            .title {
+                margin-bottom: var(--space-large);
+            }
+
+            .subtitle {
+                margin-bottom: var(--space-large);
+            }
+
+            .infos {
+                flex-direction: column;
+                align-items: center;
+
+                .info {
+                    margin-bottom: var(--space-large);
+
+                    img {
+                        object-fit: contain;
+                        margin-bottom: var(--space-base);
+                    }
+
+                    &.snapchat img {
+                        transform: scale(1.4) translateY(5px);
                     }
                 }
             }
