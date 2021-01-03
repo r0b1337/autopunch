@@ -1,3 +1,4 @@
+// font definitions
 @font-face {
     font-family: Roboto;
     src: url('~@/assets/fonts/Roboto.ttf');
@@ -23,6 +24,7 @@
     src: url('~@/assets/fonts/Roboto_Condensed.woff2');
 }
 
+// css variables (could have used SCSS here but got no time for re-writing them, CSS is doing the job nice)
 :root {
     --color-light: #ffffff;
     --color-dark: #222222;
@@ -48,4 +50,14 @@
     --padding-card: 22px 26px;
     --border-radius-base: 3px;
     --header-height: 63px;
+}
+
+// breakpoint for mobile devices
+$mobile-breakpoint: 728px;
+
+// redefining variables for mobile
+@media (max-width: $mobile-breakpoint) {
+    :root {
+        --font-title: normal normal 900 36px 'Bebas Neu Bold';
+    }
 }
