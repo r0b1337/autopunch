@@ -194,6 +194,8 @@ export default {
 </script>
 
 <style scoped lang="scss">
+    @import '~/assets/style/breakpoints.scss';
+
     #performances {
         height: auto;
         overflow: hidden;
@@ -294,6 +296,21 @@ export default {
                 width: 30%;
                 height: auto;
             }
+        }
+
+        @media (max-width: $mobile-breakpoint) {
+            .performance {
+                flex-direction: column-reverse;
+
+                .image {
+                    max-width: unset;
+                    margin-bottom: 0;
+                }
+            }
+
+            .card { width: auto; }
+
+            .snap-map > img { width: 100%; }
         }
     }
 </style>
