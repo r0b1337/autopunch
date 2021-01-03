@@ -237,11 +237,13 @@ export default {
 
                 .card-subtitle {
                     font: var(--font-base);
+                    margin-bottom: var(--space-small);
                     color: var(--color-danger);
                 }
 
                 .points {
                     font: var(--font-points);
+                    margin: 0 0 var(--space-small) var(--space-base);
                 }
 
                 .places {
