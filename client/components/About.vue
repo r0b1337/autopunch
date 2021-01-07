@@ -176,6 +176,8 @@ export default {
         }
 
         @media (max-width: $mobile-breakpoint) {
+            padding: var(--space-large) var(--space-base);
+
             .who {
                 flex-direction: column-reverse;
 
