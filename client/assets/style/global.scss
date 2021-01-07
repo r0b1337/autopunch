@@ -4,6 +4,7 @@ html {
 
 body {
     margin: 0;
+    overflow-x: hidden;
 
     &::-webkit-scrollbar { display: none; } // hide scrollbar for Chrome
     -ms-overflow-style: none; // hide scrollbar for IE & Edge
