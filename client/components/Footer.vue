@@ -27,11 +27,11 @@
         <div class="modals">
             <div class="tcu link" @click="$refs.TOS.show()">Conditions d'utilisation</div>
             <div class="gdrp link" @click="$refs.PP.show()">Politique de confidentialité</div>
-        </div>
 
-        <div>
-            <Modal ref="TOS"><ToS/></Modal>
-            <Modal ref="PP"><GPRD/></Modal>
+            <div style="height: 0; width: 0;">
+                <Modal ref="TOS"><ToS/></Modal>
+                <Modal ref="PP"><GPRD/></Modal>
+            </div>
         </div>
     </div>
 </template>
