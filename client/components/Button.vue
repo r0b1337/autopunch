@@ -23,6 +23,7 @@ export default {
         display: inline-block;
         padding: var(--padding-button);
         width: fit-content;
+        height: 100%;
 
         font: var(--font-button);
         color: var(--color-light);
