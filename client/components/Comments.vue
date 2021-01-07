@@ -2,21 +2,17 @@
     <div id="comments" v-fade-in>
         <span class="title">Ce que l'on pense de nous</span>
         <span class="subtitle danger">Merci</span>
-        <Disqus shortname="autopunch" lang="fr"/>
+        <div id="disqus_thread"/>
     </div>
 </template>
 
 <script>
-import { Disqus } from 'vue-disqus';
 import FadeIn from '~/plugins/fade-in.client.js';
 
 export default {
     name: 'Comments',
     directives: {
         FadeIn,
-    },
-    components: {
-        Disqus,
     },
 };
 </script>
