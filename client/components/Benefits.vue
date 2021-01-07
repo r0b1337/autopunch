@@ -81,6 +81,7 @@ export default {
 
         @media (max-width: $mobile-breakpoint) {
             flex-direction: column;
+            padding: var(--space-large) var(--space-base);
 
             .card { width: auto; }
         }
