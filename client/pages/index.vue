@@ -1,6 +1,7 @@
 <template>
     <div id="app">
-        <transition class="header" name="slide-top">
+        <BurgerMenu v-if="$root.mobile"/>
+        <transition v-else class="header" name="slide-top">
             <Header v-if="fixed" key="fixed" fixed/>
             <Header v-else key="absolute"/>
         </transition>
@@ -15,7 +16,8 @@
         <Contact/>
         <Comments/>
 
-        <Footer/>
+        <Footer :class="{ 'extra-padding': $root.mobile }"/>
+        <CallMe v-if="$root.mobile"/>
 
         <transition-group class="toastrs" name="slide-right" @beforeLeave="beforeLeave">
             <Toastr
@@ -42,11 +44,14 @@ import Toastr from '~/components/Toastr';
 import Contact from '~/components/Contact';
 import Comments from '~/components/Comments';
 import Footer from '~/components/Footer';
+import CallMe from '~/components/CallMe';
+import BurgerMenu from '~/components/BurgerMenu';
 
 export default {
     name: 'App',
     components: {
         Header,
+        BurgerMenu,
         Intro,
         Emergency,
         Benefits,
@@ -58,6 +63,7 @@ export default {
         Contact,
         Comments,
         Footer,
+        CallMe,
     },
     data () {
         return {
@@ -69,8 +75,19 @@ export default {
         if (!process.browser) return;
 
         window.onscroll = _.debounce(this.handleScroll, 5);
+        window.onresize = this.handleResize;
 
         this.handleScroll();
+        this.handleResize();
+
+        this.$root.scrollTo = function (hash) {
+            const $ = window.$;
+            const headerHeight = parseInt(getComputedStyle(document.documentElement).getPropertyValue('--header-height'));
+
+            $('html, body').animate({ scrollTop: $(hash).offset().top - headerHeight });
+
+            window.location.hash = hash;
+        };
     },
     methods: {
         beforeLeave (el) {
@@ -80,6 +97,10 @@ export default {
         handleScroll () {
             const headerHeight = parseInt(getComputedStyle(document.documentElement).getPropertyValue('--header-height'));
             this.fixed = window.pageYOffset > this.$refs.intro.$el.offsetHeight - headerHeight;
+        },
+        handleResize () {
+            this.$root.mobile = window.innerWidth < 728;
+            this.$forceUpdate();
         },
     },
 };
@@ -96,7 +117,12 @@ export default {
         &.slide-top-enter, &.slide-top-leave-to { transform: translateY(-100%); }
     }
 
+    .footer {
+        &.extra-padding { padding-bottom: var(--space-x-large); }
+    }
+
     .toastrs {
+        pointer-events: none;
         position: fixed;
         width: 40%;
         height: 100%;
@@ -107,6 +133,7 @@ export default {
         align-items: flex-end;
         justify-content: flex-end;
         transition: all 250ms ease-in-out;
+        z-index: 2;
 
         .slide-right-enter, .slide-right-leave-to {
             transform: translateX(150%);

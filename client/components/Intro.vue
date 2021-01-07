@@ -8,7 +8,7 @@
             <span class="subtitle">- Assez perdu de temps en vous déplaçant au garage ?</span>
             <span class="subtitle">- N'en dîtes pas plus !</span>
             <span class="subtitle">Nous intervenons où vous le souhaitez.</span>
-            <Button class="button" text="DEMANDEZ UN RENDEZ-VOUS"/>
+            <Button class="button" text="DEMANDEZ UN RENDEZ-VOUS" @click="$root.scrollTo('#meeting')"/>
         </div>
     </div>
 </template>

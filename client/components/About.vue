@@ -65,6 +65,8 @@ export default {
 </script>
 
 <style scoped lang="scss">
+    @import '~/assets/style/breakpoints.scss';
+
     #about {
         height: auto;
         overflow: hidden;
@@ -171,6 +173,18 @@ export default {
         .title {
             width: 100%;
             margin-bottom: var(--space-large);
+        }
+
+        @media (max-width: $mobile-breakpoint) {
+            padding: var(--space-large) var(--space-base);
+
+            .who {
+                flex-direction: column-reverse;
+
+                .image { max-width: unset; }
+            }
+
+            .card { width: auto; }
         }
     }
 </style>

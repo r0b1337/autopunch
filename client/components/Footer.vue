@@ -25,19 +25,32 @@
         <div class="siret">SIRET: <b>852 068 048 00010</b> © 2020</div>
 
         <div class="modals">
-            <div class="tcu link">Conditions d'utilisation</div>
-            <div class="gdrp link">Politique de confidentialité</div>
+            <div class="tcu link" @click="$refs.TOS.show()">Conditions d'utilisation</div>
+            <div class="gdrp link" @click="$refs.PP.show()">Politique de confidentialité</div>
+
+            <div style="height: 0; width: 0;">
+                <Modal ref="TOS"><ToS/></Modal>
+                <Modal ref="PP"><GPRD/></Modal>
+            </div>
         </div>
     </div>
 </template>
 
 <script>
 import FadeIn from '~/plugins/fade-in.client.js';
+import Modal from '~/components/Modal';
+import ToS from '~/components/ToS';
+import GPRD from '~/components/GPRD';
 
 export default {
     name: 'Footer',
     directives: {
         FadeIn,
+    },
+    components: {
+        Modal,
+        ToS,
+        GPRD,
     },
 };
 </script>

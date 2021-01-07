@@ -194,6 +194,8 @@ export default {
 </script>
 
 <style scoped lang="scss">
+    @import '~/assets/style/breakpoints.scss';
+
     #performances {
         height: auto;
         overflow: hidden;
@@ -237,11 +239,13 @@ export default {
 
                 .card-subtitle {
                     font: var(--font-base);
+                    margin-bottom: var(--space-small);
                     color: var(--color-danger);
                 }
 
                 .points {
                     font: var(--font-points);
+                    margin: 0 0 var(--space-small) var(--space-base);
                 }
 
                 .places {
@@ -292,6 +296,23 @@ export default {
                 width: 30%;
                 height: auto;
             }
+        }
+
+        @media (max-width: $mobile-breakpoint) {
+            padding: var(--space-large) var(--space-base);
+
+            .performance {
+                flex-direction: column-reverse;
+
+                .image {
+                    max-width: unset;
+                    margin-bottom: 0;
+                }
+            }
+
+            .card { width: auto; }
+
+            .snap-map > img { width: 100%; }
         }
     }
 </style>

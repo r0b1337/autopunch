@@ -43,6 +43,7 @@ export default {
             left: 0;
             z-index: 2;
             opacity: 0.4;
+            pointer-events: none;
 
             // Vue transition classes that hooks with the transition elements (https://vuejs.org/v2/guide/transitions.html)
             &.fade-in-enter-active, &.fade-in-leave-active { transition: opacity .5s ease-in-out; }
