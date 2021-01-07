@@ -15,7 +15,7 @@
                 <div class="item"><Link hash="#how" text="Comment ça roule ?" color="var(--color-dark)" @click="open = false"/></div>
                 <div class="item"><Link hash="#contact" text="Nous contacter" color="var(--color-dark)" @click="open = false"/></div>
                 <div class="item last"><Link hash="#comments" text="Avis" color="var(--color-dark)" @click="open = false"/></div>
-                <Button text="RENDEZ-VOUS" inline @click="open = false && $root.scrollTo('#meeting')"/>
+                <Button text="RENDEZ-VOUS" inline @click="open = false; $root.scrollTo('#meeting')"/>
             </div>
         </div>
     </div>
