@@ -122,6 +122,7 @@ export default {
     }
 
     .toastrs {
+        pointer-events: none;
         position: fixed;
         width: 40%;
         height: 100%;
