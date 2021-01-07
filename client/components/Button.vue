@@ -1,5 +1,5 @@
 <template>
-    <div class="container" :class="{ inline }" @click="$emit('click')">{{ text }}</div>
+    <div class="container" :class="{ inline }" @click="$emit('click')"><span>{{ text }}</span></div>
 </template>
 
 <script>
@@ -20,7 +20,9 @@ export default {
 
 <style scoped lang="scss">
     .container {
-        display: inline-block;
+        display: inline-flex;
+        justify-content: center;
+        align-items: center;
         padding: var(--padding-button);
         width: fit-content;
         height: 100%;
