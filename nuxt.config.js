@@ -27,6 +27,12 @@ export default {
             },
             {
                 src: 'https://unpkg.com/ionicons@5.2.3/dist/ionicons.js',
+                type: 'text/javascript',
+            },
+            {
+                src: 'https://autopunch.disqus.com/embed.js',
+                type: 'text/javascript',
+                async: true,
             },
         ],
     },
