@@ -84,7 +84,7 @@ export default {
             const $ = window.$;
             const headerHeight = parseInt(getComputedStyle(document.documentElement).getPropertyValue('--header-height'));
 
-            $('html, body').animate({ scrollTop: $(hash).offset().top - headerHeight });
+            $('html, body').animate({ scrollTop: $(hash).offset().top - (!this.$root.mobile ? headerHeight : 0) });
 
             window.location.hash = hash;
         };
