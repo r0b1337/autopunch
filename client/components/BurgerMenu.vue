@@ -39,6 +39,7 @@ export default {
 
 <style scoped lang="scss">
     .burger-menu {
+        overflow-x: unset !important;
         position: fixed;
         z-index: 3;
         top: 0;
