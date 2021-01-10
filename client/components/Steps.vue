@@ -154,7 +154,8 @@ export default {
 
                     .step-title {
                         height: unset;
-                        width: max-content;
+                        text-align: left;
+                        width: auto;
                     }
 
                     .digit { margin-right: var(--space-base); }
@@ -178,8 +179,8 @@ export default {
                         display: inline-block;
                         width: 1px;
                         left: 27px;
-                        top: var(--space-tiny);
                         height: 110%;
+                        transform: translateY(1%);
                         background-color: var(--color-grey);
                         opacity: 0.3;
                     }
