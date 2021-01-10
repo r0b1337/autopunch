@@ -30,6 +30,8 @@ export default {
 </script>
 
 <style scoped lang="scss">
+    @import '~/assets/style/breakpoints.scss';
+
     .container {
         height: 0;
         width: 0;
@@ -88,6 +90,13 @@ export default {
             &.fade-up-enter, &.fade-up-leave-to {
                 opacity: 0;
                 transform: translate(-50%, -50%) translateY(var(--space-large));
+            }
+        }
+
+        @media (max-width: $mobile-breakpoint) {
+            .modal {
+                width: 80%;
+                height: 90%;
             }
         }
     }
