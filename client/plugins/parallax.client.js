@@ -5,6 +5,16 @@ const directive = {
         const $ = window.$;
 
         el = $(el);
+
+        if (window.innerWidth < 728) {
+            el.css({
+                'background-image': `url(${require(`~/${binding.value}`)})`,
+                'background-size': 'auto',
+                'background-position': 'center center',
+            });
+            return;
+        }
+
         el.css({
             'background-image': `url(${require(`~/${binding.value}`)})`,
             'background-size': 'auto',
