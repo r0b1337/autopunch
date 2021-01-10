@@ -1,6 +1,5 @@
 html {
     scroll-behavior: smooth;
-    overflow-x: hidden;
 }
 
 body {
@@ -15,6 +14,10 @@ body {
     }
     -ms-overflow-style: none; // hide scrollbar for IE & Edge
     scrollbar-width: none;  // hide scrollbar for Firefox
+}
+
+#__nuxt {
+    overflow-x: hidden;
 }
 
 #app {
