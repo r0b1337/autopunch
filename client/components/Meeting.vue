@@ -69,7 +69,7 @@ export default {
         showTOS () { this.$refs.TOS.show(); },
         showPP () { this.$refs.PP.show(); },
         async sendMail () {
-            const promise = axios.post(`http://${process.env.HOST}:3000/mail`, {
+            const promise = axios.post('https://autopunch.herokuapp.com/mail', {
                 name: this.name,
                 email: this.email,
                 message: this.message,
