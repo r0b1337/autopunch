@@ -19,16 +19,16 @@ app.use(cors());
 
 app.use(bodyParser.json());
 
-app.post('/', (req, res) => {
+app.post('/', async (req, res) => {
     const message = {
         from: process.env.MAIL,
         to: process.env.DEST,
         subject: `Nouvelle demande de ${req.body.name} / ${req.body.email} - Autopunch`,
         text: req.body.message,
     };
-    transporter.sendMail(message);
+    const result = await transporter.sendMail(message);
 
-    res.send();
+    res.send(result);
 });
 
 module.exports = app;
