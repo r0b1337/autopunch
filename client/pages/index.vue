@@ -71,6 +71,11 @@ export default {
             fixed: false,
         };
     },
+    provide () {
+        return {
+            toastrs: this.toastrs,
+        };
+    },
     mounted () {
         if (!process.browser) return;
 

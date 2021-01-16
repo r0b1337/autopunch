@@ -58,6 +58,7 @@ export default {
             message: '',
         };
     },
+    inject: ['toastrs'],
     computed: {
         app () {
             let parent = this.$parent;
@@ -76,12 +77,13 @@ export default {
             });
             const id = uuid();
             // inserting toastr into the DOM
-            this.app.toastrs.push({ promise, text: 'Votre mail a ete envoye avec succes !', id });
+            this.toastrs.push({ promise, text: 'Votre mail a ete envoye avec succes !', id });
             // waiting resolution
             await promise;
             // removing toastr from the DOM 1s after resolution
             setTimeout(() => {
-                this.app.toastrs = this.app.toastrs.filter(toastr => toastr.id !== id);
+                const toRemove = this.toastrs.findIndex(toastrs => toastrs.id !== id);
+                this.toastrs.splice(toRemove, 1);
             }, 1500);
         },
     },
