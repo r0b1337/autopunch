@@ -137,7 +137,7 @@ export default {
         flex-direction: column-reverse;
         align-items: flex-end;
         justify-content: flex-end;
-        transition: all 250ms ease-in-out;
+        transition: var(--transition-base);
         z-index: 2;
 
         .slide-right-enter, .slide-right-leave-to {

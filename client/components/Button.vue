@@ -36,7 +36,7 @@ export default {
         border-radius: 4px;
         cursor: pointer;
 
-        transition: all 250ms ease-in-out;
+        transition: var(--transition-base);
 
         &.inline {
             font: var(--font-points-bold);

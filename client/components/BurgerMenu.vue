@@ -48,7 +48,7 @@ export default {
         .wrapper {
             position: relative;
             width: 100vw;
-            transition: all 250ms ease-in-out;
+            transition: var(--transition-base);
 
             .button {
                 display: flex;

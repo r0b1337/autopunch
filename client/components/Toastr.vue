@@ -96,7 +96,7 @@ export default {
             position: absolute;
             top: 50%;
             left: 50%;
-            transition: all 250ms ease-in-out;
+            transition: var(--transition-base);
         }
 
         &.done {
@@ -117,6 +117,6 @@ export default {
             background-color: var(--color-danger);
         }
 
-        transition: all 250ms ease-in-out;
+        transition: var(--transition-base);
     }
 </style>
