@@ -6,18 +6,19 @@
 
         <form>
             <div class="infos">
-                <input v-model="name" type="text" placeholder="Nom / Prénom"/>
-                <input v-model="email" type="text" placeholder="Email"/>
+                <input v-model="name" type="text" placeholder="Nom / Prénom" :class="{ error: sent && !name }"/>
+                <input v-model="email" type="text" placeholder="Email" :class="{ error: sent && !email }"/>
             </div>
 
             <textarea
                 id="subject"
                 v-model="message"
+                :class="{ error: sent && !message }"
                 rows="5"
                 placeholder="De quelles prestations avez vous besoin ? Transmettez nous les détails sur le modèle de votre véhicule (modèle, kilométrage, immatriculation, VIN *) pour une réponse toujours plus rapide."
             />
-            <input id="contitions" type="checkbox"/>
-            <label for="contitions">
+            <input id="contitions" v-model="rgpd" type="checkbox"/>
+            <label for="contitions" :class="{ error: sent && !rgpd }">
                 En continuant, vous acceptez nos
                 <span class="link" @click="showTOS()">Conditions d'utilisation</span> et
                 <span class="link" @click="showPP()">Politique de confidentialité</span>
@@ -56,6 +57,8 @@ export default {
             name: '',
             email: '',
             message: '',
+            rgpd: false,
+            sent: false,
         };
     },
     inject: ['toastrs'],
@@ -70,6 +73,9 @@ export default {
         showTOS () { this.$refs.TOS.show(); },
         showPP () { this.$refs.PP.show(); },
         async sendMail () {
+            this.sent = true;
+            if (!this.rgpd || !this.name || !this.email || !this.message) return;
+
             const promise = axios.post('https://autopunch.herokuapp.com/mail', {
                 name: this.name,
                 email: this.email,
@@ -133,10 +139,21 @@ export default {
                 width: -webkit-fill-available;
                 outline: none;
                 resize: none;
+                border: solid 1px var(--color-grey);
+                transition: var(--transition-base);
+
+                &.error {
+                    border: solid 1px var(--color-light-red);
+                }
             }
 
             label {
                 font: var(--font-points);
+                transition: var(--transition-base);
+
+                &.error {
+                    color: var(--color-light-red);
+                }
             }
         }
 
