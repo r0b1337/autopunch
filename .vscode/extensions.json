@@ -1,0 +1,16 @@
+{
+    "recommendations": [
+        "dbaeumer.vscode-eslint",
+        "formulahendry.auto-rename-tag",
+        "formulahendry.auto-close-tag",
+        "eamodio.gitlens",
+        "xabikos.javascriptsnippets",
+        "yzhang.markdown-all-in-one",
+        "zhuangtongfa.material-theme",
+        "esbenp.prettier-vscode",
+        "tabnine.tabnine-vscode",
+        "octref.vetur",
+        "hollowtree.vue-snippets",
+        "mrmlnc.vscode-scss"
+    ]
+}
