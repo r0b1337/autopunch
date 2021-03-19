@@ -13,8 +13,8 @@ module.exports = {
     ],
     plugins: [
     ],
-    // add your custom rules here
     rules: {
+        'no-console': 'off',
         indent: ['error', 4],
         'vue/html-indent': ['error', 4],
         'arrow-parens': ['error', 'as-needed'],
